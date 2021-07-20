@@ -14,27 +14,43 @@ struct SplashView: View {
     var body: some View {
         switch state {
         case .loading:
-            ZStack {
-                Image("logo")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(maxWidth: .infinity, maxHeight: .infinity)
-                    .padding(20)
-                    .background(Color.white)
-                    .ignoresSafeArea()
-            }
+            loadingView()
         case .goToSignInScreen:
             Text("Carregar tela de login")
         case .goToHomeScreen:
             Text("Carregar tela principal")
         case .error(let msg):
-            Text("Mostrar erro: \(msg)")
+            loadingView(error: msg)
+        }
+    }
+}
+
+extension SplashView {
+    func loadingView(error: String? = nil) -> some View {
+        ZStack {
+            Image("logo")
+                .resizable()
+                .scaledToFit()
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .padding(20)
+                .background(Color.white)
+                .ignoresSafeArea()
+            
+            if let error = error {
+                Text("")
+                    .alert(isPresented: .constant(true), content: {
+                        Alert(title: Text("Task Manager"), message: Text(error), dismissButton: .default(Text("OK")) {
+                            // faz algo quando some o alerta
+                        })
+                    })
+            }
         }
     }
 }
 
 struct SplashView_Previews: PreviewProvider {
     static var previews: some View {
-        SplashView()
+        //SplashView()
+        SplashView(state: .error("teste de erro no servidor"))
     }
 }
