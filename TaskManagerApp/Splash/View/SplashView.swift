@@ -17,14 +17,14 @@ struct SplashView: View {
             case .loading:
                 loadingView()
             case .goToSignInScreen:
-                Text("Carregar tela de login")
+                viewModel.signInView() 
             case .goToHomeScreen:
                 Text("Carregar tela principal")
             case .error(let msg):
                 loadingView(error: msg)
             }
         }
-        .onAppear(perform: viewModel.onAppear)
+        .onAppear(perform:  viewModel.onAppear)
     }
 }
 
