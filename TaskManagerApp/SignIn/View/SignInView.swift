@@ -20,8 +20,16 @@ struct SignInView: View {
     
     var body: some View {
         ZStack {
+            if case SignInUIState.error(let value) = viewModel.uiState {
+                Text("")
+                    .alert(isPresented: .constant(true), content: {
+                        Alert(title: Text("Task Manager"), message: Text(value), dismissButton: .default(Text("OK")) {
+                            // faz algo quando some o alerta
+                        })
+                    })
+            }
             if case SignInUIState.goToHomeScreen = viewModel.uiState {
-                Text("tela principal")
+                viewModel.homeView()
             } else {
                 NavigationView {
                     
