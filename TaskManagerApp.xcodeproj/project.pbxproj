@@ -13,6 +13,10 @@
 		6D0891C326A77B1A00F7366B /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891C226A77B1A00F7366B /* SplashView.swift */; };
 		6D0891C526A77BB300F7366B /* SplashUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891C426A77BB300F7366B /* SplashUIState.swift */; };
 		6D0891C826A78B3B00F7366B /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891C726A78B3B00F7366B /* SplashViewModel.swift */; };
+		6D0891CE26A8D2D700F7366B /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891CD26A8D2D700F7366B /* SignInView.swift */; };
+		6D0891D026A8D2FC00F7366B /* SignInViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891CF26A8D2FC00F7366B /* SignInViewModel.swift */; };
+		6D0891D326A8D53100F7366B /* SplashViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891D226A8D53100F7366B /* SplashViewRouter.swift */; };
+		6D0891D526A8EEB300F7366B /* SignInUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891D426A8EEB300F7366B /* SignInUIState.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		6D0891C226A77B1A00F7366B /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		6D0891C426A77BB300F7366B /* SplashUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashUIState.swift; sourceTree = "<group>"; };
 		6D0891C726A78B3B00F7366B /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		6D0891CD26A8D2D700F7366B /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		6D0891CF26A8D2FC00F7366B /* SignInViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewModel.swift; sourceTree = "<group>"; };
+		6D0891D226A8D53100F7366B /* SplashViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewRouter.swift; sourceTree = "<group>"; };
+		6D0891D426A8EEB300F7366B /* SignInUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUIState.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 			isa = PBXGroup;
 			children = (
 				6D0891BF26A77AC700F7366B /* Splash */,
+				6D0891C926A8D1C000F7366B /* SignIn */,
 				6D0891B026A779DD00F7366B /* TaskManagerAppApp.swift */,
 				6D0891B426A779E100F7366B /* Assets.xcassets */,
 				6D0891B926A779E100F7366B /* Info.plist */,
@@ -79,6 +88,7 @@
 				6D0891C126A77AF600F7366B /* Model */,
 				6D0891C026A77AEB00F7366B /* View */,
 				6D0891C626A78AE400F7366B /* ViewModel */,
+				6D0891D126A8D46700F7366B /* Router */,
 			);
 			path = Splash;
 			sourceTree = "<group>";
@@ -105,6 +115,48 @@
 				6D0891C726A78B3B00F7366B /* SplashViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6D0891C926A8D1C000F7366B /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				6D0891CA26A8D1CB00F7366B /* Model */,
+				6D0891CB26A8D1D600F7366B /* View */,
+				6D0891CC26A8D1DD00F7366B /* ViewModel */,
+			);
+			path = SignIn;
+			sourceTree = "<group>";
+		};
+		6D0891CA26A8D1CB00F7366B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D0891D426A8EEB300F7366B /* SignInUIState.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		6D0891CB26A8D1D600F7366B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6D0891CD26A8D2D700F7366B /* SignInView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6D0891CC26A8D1DD00F7366B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6D0891CF26A8D2FC00F7366B /* SignInViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6D0891D126A8D46700F7366B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				6D0891D226A8D53100F7366B /* SplashViewRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -178,8 +230,12 @@
 			files = (
 				6D0891C526A77BB300F7366B /* SplashUIState.swift in Sources */,
 				6D0891B126A779DD00F7366B /* TaskManagerAppApp.swift in Sources */,
+				6D0891D026A8D2FC00F7366B /* SignInViewModel.swift in Sources */,
 				6D0891C326A77B1A00F7366B /* SplashView.swift in Sources */,
 				6D0891C826A78B3B00F7366B /* SplashViewModel.swift in Sources */,
+				6D0891D526A8EEB300F7366B /* SignInUIState.swift in Sources */,
+				6D0891D326A8D53100F7366B /* SplashViewRouter.swift in Sources */,
+				6D0891CE26A8D2D700F7366B /* SignInView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

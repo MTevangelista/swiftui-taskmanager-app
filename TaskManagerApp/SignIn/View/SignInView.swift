@@ -19,48 +19,54 @@ struct SignInView: View {
     @State var navigationHidden = true
     
     var body: some View {
-        NavigationView {
-            
-            ScrollView(showsIndicators: false) {
-                
-                VStack(alignment: .center, spacing: 20) {
+        ZStack {
+            if case SignInUIState.goToHomeScreen = viewModel.uiState {
+                Text("tela principal")
+            } else {
+                NavigationView {
                     
-                    Spacer(minLength: 36)
-                    
-                    VStack(alignment: .center, spacing: 8) {
-                        Image("logo")
-                            .resizable()
-                            .scaledToFit()
-                            .padding(.horizontal, 4)
-                            .frame(width: 200, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                    ScrollView(showsIndicators: false) {
                         
-                        Text("Login")
-                            .foregroundColor(.orange)
-                            .font(Font.system(.title).bold())
-                            .padding(.bottom, 6)
+                        VStack(alignment: .center, spacing: 20) {
+                            
+                            Spacer(minLength: 36)
+                            
+                            VStack(alignment: .center, spacing: 8) {
+                                Image("logo")
+                                    .resizable()
+                                    .scaledToFit()
+                                    .padding(.horizontal, 4)
+                                    .frame(width: 200, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                
+                                Text("Login")
+                                    .foregroundColor(.orange)
+                                    .font(Font.system(.title).bold())
+                                    .padding(.bottom, 6)
+                                
+                                emailField
+                                
+                                passwordField
+                                
+                                enterButton
+                                
+                                registerLink
+                                
+                                Text("Copyright @YYY")
+                                    .foregroundColor(.gray)
+                                    .font(Font.system(size: 16).bold())
+                                    .padding(.top, 16)
+                            }
+                            
+                        }
                         
-                        emailField
-                        
-                        passwordField
-                        
-                        enterButton
-                        
-                        registerLink
-                        
-                        Text("Copyright @YYY")
-                            .foregroundColor(.gray)
-                            .font(Font.system(size: 16).bold())
-                            .padding(.top, 16)
                     }
-                    
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .padding(.horizontal, 32)
+                    .background(Color.white)
+                    .navigationBarTitle("Login", displayMode: .inline)
+                    .navigationBarHidden(navigationHidden)
                 }
-                
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .padding(.horizontal, 32)
-            .background(Color.white)
-            .navigationBarTitle("Login", displayMode: .inline)
-            .navigationBarHidden(navigationHidden)
         }
     }
 }
@@ -82,7 +88,7 @@ extension SignInView {
 extension SignInView {
     var enterButton: some View {
         Button("Entrar") {
-            // click event
+            viewModel.login(email: email, password: password)
         }
     }
 }
