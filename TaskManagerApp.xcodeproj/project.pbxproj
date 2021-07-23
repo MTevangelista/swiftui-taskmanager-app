@@ -22,6 +22,7 @@
 		6D0891E226AA272100F7366B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891E126AA272100F7366B /* HomeViewModel.swift */; };
 		6D0891E826AB675900F7366B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891E726AB675900F7366B /* SignUpView.swift */; };
 		6D0891EA26AB679300F7366B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891E926AB679300F7366B /* SignUpViewModel.swift */; };
+		6D0891F026AB7C8200F7366B /* Gender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891EF26AB7C8100F7366B /* Gender.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		6D0891E126AA272100F7366B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6D0891E726AB675900F7366B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		6D0891E926AB679300F7366B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
+		6D0891EF26AB7C8100F7366B /* Gender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gender.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +76,8 @@
 		6D0891AF26A779DD00F7366B /* TaskManagerApp */ = {
 			isa = PBXGroup;
 			children = (
-				6D0891BF26A77AC700F7366B /* Splash */,
-				6D0891C926A8D1C000F7366B /* SignIn */,
-				6D0891E326AB66E000F7366B /* SignUp */,
-				6D0891D926AA268B00F7366B /* Home */,
+				6D0891EC26AB7A8300F7366B /* Common */,
+				6D0891EB26AB7A3300F7366B /* Module */,
 				6D0891B026A779DD00F7366B /* TaskManagerAppApp.swift */,
 				6D0891B426A779E100F7366B /* Assets.xcassets */,
 				6D0891B926A779E100F7366B /* Info.plist */,
@@ -246,6 +246,33 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6D0891EB26AB7A3300F7366B /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				6D0891BF26A77AC700F7366B /* Splash */,
+				6D0891C926A8D1C000F7366B /* SignIn */,
+				6D0891E326AB66E000F7366B /* SignUp */,
+				6D0891D926AA268B00F7366B /* Home */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		6D0891EC26AB7A8300F7366B /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				6D0891ED26AB7AEC00F7366B /* Model */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		6D0891ED26AB7AEC00F7366B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6D0891EF26AB7C8100F7366B /* Gender.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -321,6 +348,7 @@
 				6D0891E826AB675900F7366B /* SignUpView.swift in Sources */,
 				6D0891B126A779DD00F7366B /* TaskManagerAppApp.swift in Sources */,
 				6D0891D026A8D2FC00F7366B /* SignInViewModel.swift in Sources */,
+				6D0891F026AB7C8200F7366B /* Gender.swift in Sources */,
 				6D0891E026AA26D700F7366B /* HomeView.swift in Sources */,
 				6D0891D826AA25AA00F7366B /* SignInViewRouter.swift in Sources */,
 				6D0891C326A77B1A00F7366B /* SplashView.swift in Sources */,
