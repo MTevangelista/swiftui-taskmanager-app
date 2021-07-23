@@ -44,7 +44,7 @@ struct SignInView: View {
                                     .resizable()
                                     .scaledToFit()
                                     .padding(.horizontal, 4)
-                                    .frame(width: 200, height: 100, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                    .frame(width: 200, height: 100, alignment: .center)
                                 
                                 Text("Login")
                                     .foregroundColor(.orange)
@@ -110,7 +110,7 @@ extension SignInView {
             
             ZStack {
                 NavigationLink(
-                    destination: Text("Tela de cadastro"),
+                    destination: viewModel.signUpView(),
                     tag: 1,
                     selection: $action,
                     label: { EmptyView() })

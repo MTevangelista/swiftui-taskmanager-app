@@ -21,6 +21,10 @@ class SignInViewModel: ObservableObject {
 
 extension SignInViewModel {
     
+    func signUpView() -> some View {
+        return SignInViewRouter.makeSignUpView()
+    }
+    
     func homeView() -> some View {
         return SignInViewRouter.makeHomeView()
     }
