@@ -46,6 +46,15 @@ struct SignUpView: View {
                     Spacer()
                 }.padding(.horizontal, 8)
             }.padding()
+            
+            if case SignUpUIState.error(let value) = viewModel.uiState {
+                Text("")
+                    .alert(isPresented: .constant(true), content: {
+                        Alert(title: Text("Task Manager"), message: Text(value), dismissButton: .default(Text("OK")) {
+                            // faz algo quando some o alerta
+                        })
+                    })
+            }
         }
     }
 }
@@ -107,7 +116,7 @@ extension SignUpView {
 extension SignUpView {
     var saveButton: some View {
         Button("Realize o seu cadastro") {
-            // evento de cadastro
+            viewModel.signUp()
         }
     }
 }
