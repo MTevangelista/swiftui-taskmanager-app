@@ -27,6 +27,8 @@
 		6D0891F526AB835000F7366B /* SignUpViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891F426AB835000F7366B /* SignUpViewRouter.swift */; };
 		6D0891FE26ABA92B00F7366B /* EditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891FD26ABA92B00F7366B /* EditTextView.swift */; };
 		6D08920226ABA9C400F7366B /* CustomTextFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D08920126ABA9C400F7366B /* CustomTextFieldStyle.swift */; };
+		6D3A200C26ACE19500385C28 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A200B26ACE19500385C28 /* String+Extension.swift */; };
+		6D3A201126ACE78000385C28 /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A201026ACE78000385C28 /* LoadingButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +54,8 @@
 		6D0891F426AB835000F7366B /* SignUpViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewRouter.swift; sourceTree = "<group>"; };
 		6D0891FD26ABA92B00F7366B /* EditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditTextView.swift; sourceTree = "<group>"; };
 		6D08920126ABA9C400F7366B /* CustomTextFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextFieldStyle.swift; sourceTree = "<group>"; };
+		6D3A200B26ACE19500385C28 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		6D3A201026ACE78000385C28 /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -270,6 +274,7 @@
 		6D0891EC26AB7A8300F7366B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6D3A200A26ACE15600385C28 /* Extension */,
 				6D0891FB26ABA90100F7366B /* Component */,
 				6D0891ED26AB7AEC00F7366B /* Model */,
 			);
@@ -295,6 +300,7 @@
 		6D0891FB26ABA90100F7366B /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				6D3A200D26ACE72200385C28 /* Button */,
 				6D0891FC26ABA91200F7366B /* EditText */,
 			);
 			path = Component;
@@ -315,6 +321,22 @@
 				6D08920126ABA9C400F7366B /* CustomTextFieldStyle.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		6D3A200A26ACE15600385C28 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				6D3A200B26ACE19500385C28 /* String+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6D3A200D26ACE72200385C28 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				6D3A201026ACE78000385C28 /* LoadingButtonView.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -388,7 +410,9 @@
 			files = (
 				6D0891C526A77BB300F7366B /* SplashUIState.swift in Sources */,
 				6D0891EA26AB679300F7366B /* SignUpViewModel.swift in Sources */,
+				6D3A201126ACE78000385C28 /* LoadingButtonView.swift in Sources */,
 				6D0891E226AA272100F7366B /* HomeViewModel.swift in Sources */,
+				6D3A200C26ACE19500385C28 /* String+Extension.swift in Sources */,
 				6D0891F226AB826400F7366B /* SignUpUIState.swift in Sources */,
 				6D0891E826AB675900F7366B /* SignUpView.swift in Sources */,
 				6D0891F526AB835000F7366B /* SignUpViewRouter.swift in Sources */,

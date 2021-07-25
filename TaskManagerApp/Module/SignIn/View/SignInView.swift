@@ -59,9 +59,9 @@ struct SignInView: View {
                                 
                                 registerLink
                                 
-                                Text("Copyright @YYY")
+                                Text("Copyright - Nome da Empresa 2021")
                                     .foregroundColor(.gray)
-                                    .font(Font.system(size: 16).bold())
+                                    .font(Font.system(size: 13).bold())
                                     .padding(.top, 16)
                             }
                             
@@ -80,28 +80,33 @@ struct SignInView: View {
 
 extension SignInView {
     var emailField: some View {
-//        TextField("", text: $email)
-//            .border(Color.black)
         EditTextView(text: $email,
                      placeholder: "E-mail",
                      keyboard: .emailAddress,
                      error: "E-mail inválido",
-                     failure: email.count < 5)
+                     failure: !email.isEmail())
     }
 }
 
 extension SignInView {
     var passwordField: some View {
-        SecureField("", text: $password)
-            .border(Color.black)
+        EditTextView(text: $password,
+                     placeholder: "Senha",
+                     keyboard: .default,
+                     error: "Senha deve ter ao menos 8 caracteres",
+                     failure: password.hasMinLenght(value: password, min: 8),
+                     isSecure: true)
     }
 }
 
 extension SignInView {
     var enterButton: some View {
-        Button("Entrar") {
+        ButtonView(action: {
             viewModel.login(email: email, password: password)
-        }
+        },
+        text: "Entrar",
+        showProgress: viewModel.uiState == SignInUIState.loading,
+        disabled: !email.isEmail() || password.hasMinLenght(value: password, min: 8))
     }
 }
 
