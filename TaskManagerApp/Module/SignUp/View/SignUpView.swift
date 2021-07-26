@@ -11,17 +11,9 @@ struct SignUpView: View {
     
     @ObservedObject var viewModel: SignUpViewModel
     
-    @State var fullName = ""
-    @State var email = ""
-    @State var password = ""
-    @State var document = ""
-    @State var phone = ""
-    @State var birthday = ""
-    @State var gender = Gender.male
-    
     var body: some View {
         ZStack {
-            ScrollView(showsIndicators: /*@START_MENU_TOKEN@*/true/*@END_MENU_TOKEN@*/) {
+            ScrollView(showsIndicators: true) {
                 VStack(alignment: .center) {
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Cadastro")
@@ -63,42 +55,42 @@ struct SignUpView: View {
 
 extension SignUpView {
     var fullNameField: some View {
-        EditTextView(text: $fullName,
+        EditTextView(text: $viewModel.fullName,
                      placeholder: "Entre com seu nome completo *",
                      keyboard: .alphabet,
                      error: "Nome precisa ter ao menos 3 caracteres",
-                     failure: fullName.hasMinLenght(value: fullName, min: 3))
+                     failure: viewModel.fullName.hasMinLenght(value: viewModel.fullName, min: 3))
     }
 }
 
 extension SignUpView {
     var emailField: some View {
-        EditTextView(text: $email,
+        EditTextView(text: $viewModel.email,
                      placeholder: "Entre com seu e-mail *",
                      keyboard: .emailAddress,
                      error: "E-mail inválido",
-                     failure: !email.isEmail())
+                     failure: !viewModel.email.isEmail())
     }
 }
 
 extension SignUpView {
     var passwordField: some View {
-        EditTextView(text: $password,
+        EditTextView(text: $viewModel.password,
                      placeholder: "Entre com sua senha *",
                      keyboard: .default,
                      error: "Senha precisa ter ao menos 8 caracteres",
-                     failure: password.hasMinLenght(value: password, min: 8),
+                     failure: viewModel.password.hasMinLenght(value: viewModel.password, min: 8),
                      isSecure: true)
     }
 }
 
 extension SignUpView {
     var documentField: some View {
-        EditTextView(text: $document,
+        EditTextView(text: $viewModel.document,
                      placeholder: "Entre com seu CPF *",
                      keyboard: .numberPad,
                      error: "CPF inválido",
-                     failure: document.count != 11)
+                     failure: viewModel.document.count != 11)
         // TODO: mask
         // TODO: isDisabled
     }
@@ -106,29 +98,30 @@ extension SignUpView {
 
 extension SignUpView {
     var phoneField: some View {
-        EditTextView(text: $phone,
+        EditTextView(text: $viewModel.phone,
                      placeholder: "Entre com seu celular *",
                      keyboard: .numberPad,
                      error: "Entre com o DDD + 8 OU 9 digitos",
-                     failure: phone.hasMinLenght(value: phone, min: 3) || phone.hasMaxLenght(value: phone, max: 12))
+                     failure: viewModel.phone.hasMinLenght(value: viewModel.phone, min: 3) ||
+                        viewModel.phone.hasMaxLenght(value: viewModel.phone, max: 12))
         // TODO: mask
     }
 }
 
 extension SignUpView {
     var birthdayField: some View {
-        EditTextView(text: $birthday,
+        EditTextView(text: $viewModel.birthday,
                      placeholder: "Entre com sua data de nascimento *",
                      keyboard: .default,
                      error: "Data deve ser dd/MM/yyyy",
-                     failure: birthday.count != 10)
+                     failure: viewModel.birthday.count != 10)
         // TODO: mask
     }
 }
 
 extension SignUpView {
     var genderField: some View {
-        Picker("", selection: $gender) {
+        Picker("", selection: $viewModel.gender) {
             ForEach(Gender.allCases, id: \.self) { value in
                 Text(value.rawValue)
                     .tag(value)
@@ -146,13 +139,13 @@ extension SignUpView {
         },
         text: "Realize seu cadastro",
         showProgress: viewModel.uiState == SignUpUIState.loading,
-        disabled: !email.isEmail() ||
-            password.hasMinLenght(value: password, min: 8) ||
-            fullName.hasMinLenght(value: fullName, min: 3) ||
-            document.count != 11                           ||
-            phone.hasMinLenght(value: phone, min: 10)      ||
-            phone.hasMaxLenght(value: phone, max: 12)      ||
-            birthday.count != 10)
+        disabled: !viewModel.email.isEmail() ||
+            viewModel.password.hasMinLenght(value: viewModel.password, min: 8) ||
+            viewModel.fullName.hasMinLenght(value: viewModel.fullName, min: 3) ||
+            viewModel.document.count != 11                           ||
+            viewModel.phone.hasMinLenght(value: viewModel.phone, min: 10)      ||
+            viewModel.phone.hasMaxLenght(value: viewModel.phone, max: 12)      ||
+            viewModel.birthday.count != 10)
     }
 }
 
