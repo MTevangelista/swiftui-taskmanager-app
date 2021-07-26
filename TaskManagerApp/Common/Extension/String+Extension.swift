@@ -17,4 +17,8 @@ extension String {
     func hasMinLenght(value: String, min: Int) -> Bool {
         return value.count < min
     }
+    
+    func hasMaxLenght(value: String, max: Int) -> Bool {
+        return value.count > max
+    }
 }

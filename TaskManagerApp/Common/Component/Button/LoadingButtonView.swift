@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ButtonView: View {
+struct LoadingButtonView: View {
     
     var action: () -> Void
     var text: String
@@ -39,7 +39,7 @@ struct ButtonView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
             VStack {
-                ButtonView(action: {
+                LoadingButtonView(action: {
                     print("Hello Word")
                 },
                 text: "Entrar",
