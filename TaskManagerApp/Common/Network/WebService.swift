@@ -15,8 +15,13 @@ enum WebService {
                 print(String(data: data, encoding: .utf8))
                 break
             case .failure(let error, let data):
-                guard let data = data else { return }
-                print(String(data: data, encoding: .utf8))
+                if error == .badRequest {
+                    guard let data = data else { return }
+                    print(String(data: data, encoding: .utf8))
+                    let decoder = JSONDecoder()
+                    let response = try? decoder.decode(SignUpResponse.self, from: data)
+                    print(response?.detail)
+                }
                 break
             }
         }
