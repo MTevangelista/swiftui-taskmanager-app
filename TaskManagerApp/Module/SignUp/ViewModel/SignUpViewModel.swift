@@ -46,13 +46,14 @@ class SignUpViewModel: ObservableObject {
                                            document: document,
                                            phone: phone,
                                            birthday: birthdayFormatted,
-                                           gender: gender.index))
-        
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-//            //self.uiState = .error("Usuário já existente")
-//            self.uiState = .success
-//            self.publisher.send(true)
-//        }
+                                           gender: gender.index)) { (successResponse, errorResponse) in
+             
+            if let error = errorResponse {
+                DispatchQueue.main.async {
+                    self.uiState = .error(error.detail)
+                }
+            }
+        }
     }
 }
 

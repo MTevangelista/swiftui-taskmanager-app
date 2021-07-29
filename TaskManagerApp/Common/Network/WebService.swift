@@ -8,19 +8,17 @@
 import Foundation
 
 enum WebService {
-    public static func postUser(request: SignUpRequest) {
+    public static func postUser(request: SignUpRequest, completion: @escaping (Bool?, ErrorResponse?) -> Void) {
         call(path: .postUser, body: request) { result in
             switch result {
             case .success(let data):
-                print(String(data: data, encoding: .utf8))
                 break
             case .failure(let error, let data):
                 if error == .badRequest {
                     guard let data = data else { return }
-                    print(String(data: data, encoding: .utf8))
                     let decoder = JSONDecoder()
-                    let response = try? decoder.decode(SignUpResponse.self, from: data)
-                    print(response?.detail)
+                    let response = try? decoder.decode(ErrorResponse.self, from: data)
+                    completion(nil, response)
                 }
                 break
             }
