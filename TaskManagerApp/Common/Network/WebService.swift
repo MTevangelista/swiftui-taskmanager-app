@@ -8,21 +8,50 @@
 import Foundation
 
 enum WebService {
-    
+    public static func postUser(request: SignUpRequest) {
+        call(path: .postUser, body: request) { result in
+            switch result {
+            case .success(let data):
+                print(String(data: data, encoding: .utf8))
+                break
+            case .failure(let error, let data):
+                guard let data = data else { return }
+                print(String(data: data, encoding: .utf8))
+                break
+            }
+        }
+    }
+}
+
+extension WebService {
     enum Endpoint: String {
         case base = "https://habitplus-api.tiagoaguiar.co"
         case postUser = "/users"
     }
     
+    enum NetworkError {
+        case badRequest
+        case notFound
+        case unauthorized
+        case internalServerError
+    }
+    
+    enum Result {
+        case success(Data)
+        case failure(NetworkError, Data?)
+    }
+}
+
+extension WebService {
     private static func completeURL(path: Endpoint) -> URLRequest? {
         guard let url = URL(string: "\(Endpoint.base.rawValue)\(path.rawValue)") else { return nil }
         
         return URLRequest(url: url)
     }
     
-    public static func postUser(request: SignUpRequest) {
-        guard let jsonData = try? JSONEncoder().encode(request) else { return }
-        guard var urlRequest = completeURL(path: .postUser) else { return }
+    private static func call<T: Encodable>(path: Endpoint, body: T, completion: @escaping (Result) -> Void) {
+        guard let jsonData = try? JSONEncoder().encode(body) else { return }
+        guard var urlRequest = completeURL(path: path) else { return }
         
         urlRequest.httpMethod = "POST"
         urlRequest.setValue("application/json", forHTTPHeaderField: "accept")
@@ -31,19 +60,24 @@ enum WebService {
         
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in
             guard let data = data, error == nil else {
-                print(error)
+                print(error ?? "")
+                completion(.failure(.internalServerError, nil))
                 return
             }
             
-            print(String(data: data, encoding: .utf8))
-            
-            print("response\n")
-            
-            if let r = response as? HTTPURLResponse {
-                print(r.statusCode)
+            if let httpResponse = response as? HTTPURLResponse {
+                switch httpResponse.statusCode {
+                case 400:
+                    completion(.failure(.badRequest, data))
+                    break
+                case 200:
+                    completion(.success(data))
+                    break
+                default:
+                    break
+                }
             }
         }
         task.resume()
     }
-    
 }
