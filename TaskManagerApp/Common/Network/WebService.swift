@@ -12,6 +12,7 @@ enum WebService {
         call(path: .postUser, body: request) { result in
             switch result {
             case .success(let data):
+                completion(true, nil)
                 break
             case .failure(let error, let data):
                 if error == .badRequest {
