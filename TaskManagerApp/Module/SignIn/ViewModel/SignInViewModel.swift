@@ -38,7 +38,7 @@ class SignInViewModel: ObservableObject {
 
             if let error = errorResponse {
                 DispatchQueue.main.async {
-                    self.uiState = .error(error.detail)
+                    self.uiState = .error(error.detail.message)
                 }
             }
 
