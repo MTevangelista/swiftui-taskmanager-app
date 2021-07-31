@@ -25,29 +25,6 @@ enum WebService {
             }
         }
     }
-    
-    public static func login(request: SignInRequest, completion: @escaping (SignInResponse?, SignInErrorResponse?) -> Void) {
-        call(path: .login  , params: [
-            URLQueryItem(name: "username", value: request.email),
-            URLQueryItem(name: "password", value: request.password)
-        ]) { result in
-            switch result {
-            case .success(let data):
-                let decoder = JSONDecoder()
-                let response = try? decoder.decode(SignInResponse.self, from: data)
-                completion(response, nil)
-                break
-            case .failure(let error, let data):
-                if error == .unauthorized {
-                    guard let data = data else { return }
-                    let decoder = JSONDecoder()
-                    let response = try? decoder.decode(SignInErrorResponse.self, from: data)
-                    completion(nil, response)
-                }
-                break
-            }
-        }
-    }
 }
 
 extension WebService {
@@ -121,7 +98,7 @@ extension WebService {
         handleCallRequest(path: path, contentType: .json, data: jsonData, completion: completion)
     }
     
-    private static func call(path: Endpoint, params: [URLQueryItem], completion: @escaping (Result) -> Void) {
+    public static func call(path: Endpoint, params: [URLQueryItem], completion: @escaping (Result) -> Void) {
         guard let urlRequest = completeURL(path: path) else { return }
         guard let absoluteURL = urlRequest.url?.absoluteString else { return }
         var components = URLComponents(string: absoluteURL)
