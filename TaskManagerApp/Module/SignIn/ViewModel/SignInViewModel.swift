@@ -14,6 +14,7 @@ class SignInViewModel: ObservableObject {
     @Published var uiState: SignInUIState = .none
     
     private var cancellable: AnyCancellable?
+    private var cancellableRequest: AnyCancellable?
     
     private let publisher = PassthroughSubject<Bool, Never>()
     private let interactor: SignInInteractor
@@ -32,26 +33,42 @@ class SignInViewModel: ObservableObject {
     
     deinit {
         cancellable?.cancel()
+        cancellableRequest?.cancel()
     }
     
     func login() {
         self.uiState = .loading
         
-        interactor.login(request: SignInRequest(email: email, password: password)) { (successResponse, errorResponse) in
-            if let error = errorResponse {
-                DispatchQueue.main.async {
-                    self.uiState = .error(error.detail.message)
+        cancellableRequest = interactor.login(request: SignInRequest(email: email, password: password))
+            .receive(on: DispatchQueue.main)
+            .sink { completion in
+                switch(completion) {
+                case .failure(let appError):
+                    self.uiState = SignInUIState.error(appError.message)
+                    break
+                case .finished:
+                    break
                 }
+            } receiveValue: { success in
+                print(success)
+                self.uiState = .goToHomeScreen
             }
-
-            if let success = successResponse {
-                DispatchQueue.main.async {
-                    print(success)
-                    self.uiState = .goToHomeScreen
-                }
-            }
-        }
     }
+
+//        interactor.login(request: SignInRequest(email: email, password: password)) { (successResponse, errorResponse) in
+//            if let error = errorResponse {
+//                DispatchQueue.main.async {
+//                    self.uiState = .error(error.detail.message)
+//                }
+//            }
+//
+//            if let success = successResponse {
+//                DispatchQueue.main.async {
+//                    print(success)
+//                    self.uiState = .goToHomeScreen
+//                }
+//            }
+//        }
 }
 
 extension SignInViewModel {

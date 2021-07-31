@@ -6,11 +6,13 @@
 //
 
 import Foundation
+import Combine
 
 struct SignInInteractor {
     private let remote: RemoteDataSource = .shared
     
-    func login (request: SignInRequest, completion: @escaping (SignInResponse?, SignInErrorResponse?) -> Void) {
-        remote.login(request: request, completion: completion)
+    func login (request: SignInRequest) -> Future<SignInResponse, AppError> {
+        return remote.login(request: request)
     }
 }
+ 

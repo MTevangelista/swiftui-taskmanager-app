@@ -38,6 +38,7 @@
 		6DBB1AF626B4B29A00722E22 /* SignInErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AF526B4B29900722E22 /* SignInErrorResponse.swift */; };
 		6DBB1AF926B4B89100722E22 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AF826B4B89100722E22 /* SignInInteractor.swift */; };
 		6DBB1AFB26B4BB8700722E22 /* RemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AFA26B4BB8700722E22 /* RemoteDataSource.swift */; };
+		6DBB1AFD26B596E500722E22 /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AFC26B596E500722E22 /* AppError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		6DBB1AF526B4B29900722E22 /* SignInErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInErrorResponse.swift; sourceTree = "<group>"; };
 		6DBB1AF826B4B89100722E22 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		6DBB1AFA26B4BB8700722E22 /* RemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteDataSource.swift; sourceTree = "<group>"; };
+		6DBB1AFC26B596E500722E22 /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +313,7 @@
 			children = (
 				6D0891EF26AB7C8100F7366B /* Gender.swift */,
 				6D26150B26B35B2D004F1FE0 /* ErrorResponse.swift */,
+				6DBB1AFC26B596E500722E22 /* AppError.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 			files = (
 				6D26150A26B35724004F1FE0 /* SignUpResponse.swift in Sources */,
 				6D0891C526A77BB300F7366B /* SplashUIState.swift in Sources */,
+				6DBB1AFD26B596E500722E22 /* AppError.swift in Sources */,
 				6D0891EA26AB679300F7366B /* SignUpViewModel.swift in Sources */,
 				6DBB1AFB26B4BB8700722E22 /* RemoteDataSource.swift in Sources */,
 				6D3A201126ACE78000385C28 /* LoadingButtonView.swift in Sources */,
