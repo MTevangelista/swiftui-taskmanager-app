@@ -44,6 +44,8 @@
 		6DBB1B0626B8186800722E22 /* UserAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1B0526B8186800722E22 /* UserAuth.swift */; };
 		6DBB1B0826B81B6200722E22 /* LocalDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1B0726B81B6200722E22 /* LocalDataSource.swift */; };
 		6DBB1B0B26B828E200722E22 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1B0A26B828E200722E22 /* SplashInteractor.swift */; };
+		6DBB1B0D26B8407D00722E22 /* RefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1B0C26B8407D00722E22 /* RefreshToken.swift */; };
+		6DBB1B1026B85A4000722E22 /* SplashRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1B0F26B85A4000722E22 /* SplashRemoteDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -86,6 +88,8 @@
 		6DBB1B0526B8186800722E22 /* UserAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserAuth.swift; sourceTree = "<group>"; };
 		6DBB1B0726B81B6200722E22 /* LocalDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataSource.swift; sourceTree = "<group>"; };
 		6DBB1B0A26B828E200722E22 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
+		6DBB1B0C26B8407D00722E22 /* RefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshToken.swift; sourceTree = "<group>"; };
+		6DBB1B0F26B85A4000722E22 /* SplashRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRemoteDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 				6D0891C026A77AEB00F7366B /* View */,
 				6D0891C626A78AE400F7366B /* ViewModel */,
 				6DBB1B0926B828BA00722E22 /* Interactor */,
+				6DBB1B0E26B85A1D00722E22 /* DataSource */,
 				6D0891D126A8D46700F7366B /* Router */,
 			);
 			path = Splash;
@@ -160,6 +165,7 @@
 			isa = PBXGroup;
 			children = (
 				6D0891C426A77BB300F7366B /* SplashUIState.swift */,
+				6DBB1B0C26B8407D00722E22 /* RefreshToken.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -179,8 +185,7 @@
 				6D0891CB26A8D1D600F7366B /* View */,
 				6D0891CC26A8D1DD00F7366B /* ViewModel */,
 				6DBB1AF726B4B86600722E22 /* Interactor */,
-				6DBB1B0426B5A9F100722E22 /* SignInRemoteDataSource */,
-				6DBB1AFA26B4BB8700722E22 /* SignInRemoteDataSource.swift */,
+				6DBB1B0426B5A9F100722E22 /* DataSource */,
 				6D0891D626AA258900F7366B /* Router */,
 			);
 			path = SignIn;
@@ -417,11 +422,12 @@
 			path = DataSource;
 			sourceTree = "<group>";
 		};
-		6DBB1B0426B5A9F100722E22 /* SignInRemoteDataSource */ = {
+		6DBB1B0426B5A9F100722E22 /* DataSource */ = {
 			isa = PBXGroup;
 			children = (
+				6DBB1AFA26B4BB8700722E22 /* SignInRemoteDataSource.swift */,
 			);
-			path = SignInRemoteDataSource;
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		6DBB1B0926B828BA00722E22 /* Interactor */ = {
@@ -430,6 +436,14 @@
 				6DBB1B0A26B828E200722E22 /* SplashInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		6DBB1B0E26B85A1D00722E22 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				6DBB1B0F26B85A4000722E22 /* SplashRemoteDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,6 +518,7 @@
 				6D26150A26B35724004F1FE0 /* SignUpResponse.swift in Sources */,
 				6D0891C526A77BB300F7366B /* SplashUIState.swift in Sources */,
 				6DBB1AFD26B596E500722E22 /* AppError.swift in Sources */,
+				6DBB1B1026B85A4000722E22 /* SplashRemoteDataSource.swift in Sources */,
 				6D0891EA26AB679300F7366B /* SignUpViewModel.swift in Sources */,
 				6DBB1B0226B5A7F800722E22 /* SignUpRemoteDataSource.swift in Sources */,
 				6DBB1AFB26B4BB8700722E22 /* SignInRemoteDataSource.swift in Sources */,
@@ -518,6 +533,7 @@
 				6D0891E826AB675900F7366B /* SignUpView.swift in Sources */,
 				6D0891F526AB835000F7366B /* SignUpViewRouter.swift in Sources */,
 				6D0891B126A779DD00F7366B /* TaskManagerAppApp.swift in Sources */,
+				6DBB1B0D26B8407D00722E22 /* RefreshToken.swift in Sources */,
 				6DBB1AF926B4B89100722E22 /* SignInInteractor.swift in Sources */,
 				6D3A201426AF9EEC00385C28 /* WebService.swift in Sources */,
 				6D0891D026A8D2FC00F7366B /* SignInViewModel.swift in Sources */,
