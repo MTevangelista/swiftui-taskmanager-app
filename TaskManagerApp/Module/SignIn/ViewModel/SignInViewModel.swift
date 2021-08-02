@@ -12,9 +12,11 @@ class SignInViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var uiState: SignInUIState = .none
+    @Published var testToken = ""
     
     private var cancellable: AnyCancellable?
     private var cancellableRequest: AnyCancellable?
+    private var testCancellable: AnyCancellable?
     
     private let publisher = PassthroughSubject<Bool, Never>()
     private let interactor: SignInInteractor
@@ -36,6 +38,13 @@ class SignInViewModel: ObservableObject {
         cancellableRequest?.cancel()
     }
     
+    func testRequest() {
+        testCancellable = interactor.fetchAuth()
+            .sink(receiveValue: { userAuth in
+                self.testToken = userAuth?.idToken ?? "token ainda não registrado"
+            })
+    }
+    
     func login() {
         self.uiState = .loading
         
@@ -50,25 +59,15 @@ class SignInViewModel: ObservableObject {
                     break
                 }
             } receiveValue: { success in
-                print(success)
+                let auth = UserAuth(idToken: success.accessToken,
+                                    refreshToken: success.refreshToken,
+                                    expires: success.expires,
+                                    tokenType: success.tokenType)
+                
+                self.interactor.insertAuth(userAuth: auth)
                 self.uiState = .goToHomeScreen
             }
     }
-
-//        interactor.login(request: SignInRequest(email: email, password: password)) { (successResponse, errorResponse) in
-//            if let error = errorResponse {
-//                DispatchQueue.main.async {
-//                    self.uiState = .error(error.detail.message)
-//                }
-//            }
-//
-//            if let success = successResponse {
-//                DispatchQueue.main.async {
-//                    print(success)
-//                    self.uiState = .goToHomeScreen
-//                }
-//            }
-//        }
 }
 
 extension SignInViewModel {
