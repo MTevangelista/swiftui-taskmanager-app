@@ -30,7 +30,7 @@ class SplashViewModel: ObservableObject {
             .sink(receiveValue: { userAuth in
                 if userAuth == nil {
                     self.uiState = .goToSignInScreen
-                } else if (Date().timeIntervalSince1970 > Date().timeIntervalSince1970 + Double(userAuth!.expires)) {
+                } else if (Date().timeIntervalSince1970 > Double(userAuth!.expires)) {
                     // chamar o refresh token na API
                     print("token expirou")
                 } else {
