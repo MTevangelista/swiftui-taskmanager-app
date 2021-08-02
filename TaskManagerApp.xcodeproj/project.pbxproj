@@ -18,7 +18,6 @@
 		6D0891D326A8D53100F7366B /* SplashViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891D226A8D53100F7366B /* SplashViewRouter.swift */; };
 		6D0891D526A8EEB300F7366B /* SignInUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891D426A8EEB300F7366B /* SignInUIState.swift */; };
 		6D0891D826AA25AA00F7366B /* SignInViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891D726AA25AA00F7366B /* SignInViewRouter.swift */; };
-		6D0891E026AA26D700F7366B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891DF26AA26D700F7366B /* HomeView.swift */; };
 		6D0891E226AA272100F7366B /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891E126AA272100F7366B /* HomeViewModel.swift */; };
 		6D0891E826AB675900F7366B /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891E726AB675900F7366B /* SignUpView.swift */; };
 		6D0891EA26AB679300F7366B /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0891E926AB679300F7366B /* SignUpViewModel.swift */; };
@@ -46,6 +45,7 @@
 		6DBB1B0B26B828E200722E22 /* SplashInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1B0A26B828E200722E22 /* SplashInteractor.swift */; };
 		6DBB1B0D26B8407D00722E22 /* RefreshToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1B0C26B8407D00722E22 /* RefreshToken.swift */; };
 		6DBB1B1026B85A4000722E22 /* SplashRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1B0F26B85A4000722E22 /* SplashRemoteDataSource.swift */; };
+		6DBB1B1226B88AA400722E22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1B1126B88AA400722E22 /* HomeView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,7 +62,6 @@
 		6D0891D226A8D53100F7366B /* SplashViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewRouter.swift; sourceTree = "<group>"; };
 		6D0891D426A8EEB300F7366B /* SignInUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInUIState.swift; sourceTree = "<group>"; };
 		6D0891D726AA25AA00F7366B /* SignInViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInViewRouter.swift; sourceTree = "<group>"; };
-		6D0891DF26AA26D700F7366B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6D0891E126AA272100F7366B /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		6D0891E726AB675900F7366B /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		6D0891E926AB679300F7366B /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
@@ -90,6 +89,7 @@
 		6DBB1B0A26B828E200722E22 /* SplashInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashInteractor.swift; sourceTree = "<group>"; };
 		6DBB1B0C26B8407D00722E22 /* RefreshToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshToken.swift; sourceTree = "<group>"; };
 		6DBB1B0F26B85A4000722E22 /* SplashRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashRemoteDataSource.swift; sourceTree = "<group>"; };
+		6DBB1B1126B88AA400722E22 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -255,7 +255,7 @@
 		6D0891DB26AA26A200F7366B /* View */ = {
 			isa = PBXGroup;
 			children = (
-				6D0891DF26AA26D700F7366B /* HomeView.swift */,
+				6DBB1B1126B88AA400722E22 /* HomeView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -538,7 +538,7 @@
 				6D3A201426AF9EEC00385C28 /* WebService.swift in Sources */,
 				6D0891D026A8D2FC00F7366B /* SignInViewModel.swift in Sources */,
 				6D0891F026AB7C8200F7366B /* Gender.swift in Sources */,
-				6D0891E026AA26D700F7366B /* HomeView.swift in Sources */,
+				6DBB1B1226B88AA400722E22 /* HomeView.swift in Sources */,
 				6DBB1B0B26B828E200722E22 /* SplashInteractor.swift in Sources */,
 				6D0891D826AA25AA00F7366B /* SignInViewRouter.swift in Sources */,
 				6D26150C26B35B2D004F1FE0 /* ErrorResponse.swift in Sources */,
