@@ -9,7 +9,7 @@ import Foundation
 import Combine
 
 struct SignInInteractor {
-    private let remote: RemoteDataSource = .shared
+    private let remote: SignInRemoteDataSource = .shared
     
     func login (request: SignInRequest) -> Future<SignInResponse, AppError> {
         return remote.login(request: request)

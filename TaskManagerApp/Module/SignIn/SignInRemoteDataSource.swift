@@ -9,8 +9,8 @@ import Foundation
 import Combine
 
 // singleton - possui apenas 1 objeto vivo dentro da aplicação
-struct RemoteDataSource {
-    static var shared: RemoteDataSource = RemoteDataSource()
+struct SignInRemoteDataSource {
+    static var shared: SignInRemoteDataSource = SignInRemoteDataSource()
     
     private init() {
     }

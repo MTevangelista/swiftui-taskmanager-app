@@ -8,22 +8,22 @@
 import Foundation
 
 enum WebService {
-    public static func postUser(request: SignUpRequest, completion: @escaping (Bool?, ErrorResponse?) -> Void) {
-        call(path: .postUser, body: request) { result in
-            switch result {
-            case .success(_):
-                completion(true, nil)
-                break
-            case .failure(let error, let data):
-                if error == .badRequest {
-                    guard let data = data else { return }
-                    let decoder = JSONDecoder()
-                    let response = try? decoder.decode(ErrorResponse.self, from: data)
-                    completion(nil, response)
-                }
-                break
-            }
-        }
+    public static func call<T: Encodable>(path: Endpoint, body: T, completion: @escaping (Result) -> Void) {
+        guard let jsonData = try? JSONEncoder().encode(body) else { return }
+        
+        handleCallRequest(path: path, contentType: .json, data: jsonData, completion: completion)
+    }
+    
+    public static func call(path: Endpoint, params: [URLQueryItem], completion: @escaping (Result) -> Void) {
+        guard let urlRequest = completeURL(path: path) else { return }
+        guard let absoluteURL = urlRequest.url?.absoluteString else { return }
+        var components = URLComponents(string: absoluteURL)
+        components?.queryItems = params
+        
+        handleCallRequest(path: path,
+                          contentType: .formUrl,
+                          data: components?.query?.data(using: .utf8),
+                          completion: completion)
     }
 }
 
@@ -90,23 +90,5 @@ extension WebService {
             }
         }
         task.resume()
-    }
-    
-    private static func call<T: Encodable>(path: Endpoint, body: T, completion: @escaping (Result) -> Void) {
-        guard let jsonData = try? JSONEncoder().encode(body) else { return }
-        
-        handleCallRequest(path: path, contentType: .json, data: jsonData, completion: completion)
-    }
-    
-    public static func call(path: Endpoint, params: [URLQueryItem], completion: @escaping (Result) -> Void) {
-        guard let urlRequest = completeURL(path: path) else { return }
-        guard let absoluteURL = urlRequest.url?.absoluteString else { return }
-        var components = URLComponents(string: absoluteURL)
-        components?.queryItems = params
-        
-        handleCallRequest(path: path,
-                          contentType: .formUrl,
-                          data: components?.query?.data(using: .utf8),
-                          completion: completion)
     }
 }

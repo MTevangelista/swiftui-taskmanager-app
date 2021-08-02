@@ -152,7 +152,7 @@ extension SignUpView {
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
-            SignUpView(viewModel: SignUpViewModel())
+            SignUpView(viewModel: SignUpViewModel(interactor: SignUpInteractor()))
                 .preferredColorScheme($0)
         }
     }
