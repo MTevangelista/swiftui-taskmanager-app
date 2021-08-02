@@ -42,7 +42,7 @@ struct SignInView: View {
                                     .padding(.horizontal, 4)
                                     .frame(width: 200, height: 100, alignment: .center)
                                 
-                                Text(viewModel.testToken)
+                                Text("Login")
                                     .foregroundColor(.orange)
                                     .font(Font.system(.title).bold())
                                     .padding(.bottom, 6)
@@ -68,9 +68,6 @@ struct SignInView: View {
                     .padding(.horizontal, 32)
                     .navigationBarTitle("Login", displayMode: .inline)
                     .navigationBarHidden(navigationHidden)
-                }
-                .onAppear {
-                    self.viewModel.testRequest()
                 }
             }
         }

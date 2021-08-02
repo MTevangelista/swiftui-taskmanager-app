@@ -12,11 +12,9 @@ class SignInViewModel: ObservableObject {
     @Published var email = ""
     @Published var password = ""
     @Published var uiState: SignInUIState = .none
-    @Published var testToken = ""
     
     private var cancellable: AnyCancellable?
     private var cancellableRequest: AnyCancellable?
-    private var testCancellable: AnyCancellable?
     
     private let publisher = PassthroughSubject<Bool, Never>()
     private let interactor: SignInInteractor
@@ -36,13 +34,6 @@ class SignInViewModel: ObservableObject {
     deinit {
         cancellable?.cancel()
         cancellableRequest?.cancel()
-    }
-    
-    func testRequest() {
-        testCancellable = interactor.fetchAuth()
-            .sink(receiveValue: { userAuth in
-                self.testToken = userAuth?.idToken ?? "token ainda não registrado"
-            })
     }
     
     func login() {

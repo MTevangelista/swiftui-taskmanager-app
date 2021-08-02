@@ -25,8 +25,4 @@ extension SignInInteractor {
     func insertAuth(userAuth: UserAuth) {
         local.insertUserAuth(userAuth: userAuth)
     }
-    
-    func fetchAuth() -> Future<UserAuth?, Never> {
-        return local.getUserAuth()
-    }
 }
