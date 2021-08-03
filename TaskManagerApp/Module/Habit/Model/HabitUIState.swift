@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum HabitUIState {
+enum HabitUIState: Equatable {
     case loading
     case emptyList
     case fullList

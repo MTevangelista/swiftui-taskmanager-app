@@ -12,14 +12,27 @@ struct HabitView: View {
     
     var body: some View {
         ZStack {
-            switch viewModel.uiState {
-            case .loading: progress
-            case .emptyList:
-                EmptyView()
-            case .fullList:
-                EmptyView()
-            case .error(_):
-                EmptyView()
+            if case HabitUIState.loading  = viewModel.uiState {
+                progress
+            } else {
+                NavigationView {
+                    ScrollView(showsIndicators: false) {
+                        VStack {
+                            topContainer
+                            
+                            addButton
+                            
+                            if case HabitUIState.emptyList = viewModel.uiState {
+                                emptyState
+                            } else if case HabitUIState.fullList =  viewModel.uiState {
+                                
+                            } else if case HabitUIState.error = viewModel.uiState {
+                                
+                            }
+                        }
+                    }
+                    .navigationTitle("Meus Hábitos")
+                }
             }
         }
     }
@@ -28,6 +41,63 @@ struct HabitView: View {
 extension HabitView {
     var progress: some View {
         ProgressView()
+    }
+}
+
+extension HabitView {
+    var topContainer: some View {
+        VStack {
+            Image(systemName: "exclamationmark.triangle")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 50, height: 50, alignment: .center)
+            
+            Text(viewModel.title)
+                .font(Font.system(.title).bold())
+                .foregroundColor(.orange)
+            
+            Text(viewModel.headline)
+                .font(Font.system(.title3).bold())
+                .foregroundColor(Color("textColor"))
+            
+            Text(viewModel.description)
+                .font(Font.system(.subheadline).bold())
+                .foregroundColor(Color("textColor"))
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.vertical, 32)
+        .overlay(
+            RoundedRectangle(cornerRadius: 6)
+                .stroke(Color.gray, lineWidth: 1)
+        )
+        .padding(.horizontal, 16)
+        .padding(.top, 16)
+    }
+}
+
+extension HabitView {
+    var addButton: some View {
+        NavigationLink(destination: Text("Tela de adicionar")) {
+            Label("Criar Hábito", systemImage: "plus.app")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
+        .padding(.horizontal, 16)
+    }
+}
+
+extension HabitView {
+    var emptyState: some View {
+        VStack {
+            Spacer(minLength: 60)
+            
+            Image(systemName: "exclamationmark.octagon.fill")
+                .resizable()
+                .scaledToFit()
+                .frame(width: 24, height: 24, alignment: .center)
+            
+            Text("Nenhum hábito encontrado :(")
+        }
     }
 }
 
