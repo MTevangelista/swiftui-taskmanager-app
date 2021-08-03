@@ -38,6 +38,7 @@
 		6D3A9EEE26B89B7400AA37EE /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9EED26B89B7400AA37EE /* HabitView.swift */; };
 		6D3A9EF026B89C0900AA37EE /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9EEF26B89C0900AA37EE /* HabitViewModel.swift */; };
 		6D3A9EF226B89D5400AA37EE /* HabitUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9EF126B89D5400AA37EE /* HabitUIState.swift */; };
+		6D3A9EFC26B9E90F00AA37EE /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9EFB26B9E90F00AA37EE /* ButtonStyle.swift */; };
 		6DBB1AF626B4B29A00722E22 /* SignInErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AF526B4B29900722E22 /* SignInErrorResponse.swift */; };
 		6DBB1AF926B4B89100722E22 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AF826B4B89100722E22 /* SignInInteractor.swift */; };
 		6DBB1AFB26B4BB8700722E22 /* SignInRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AFA26B4BB8700722E22 /* SignInRemoteDataSource.swift */; };
@@ -86,6 +87,7 @@
 		6D3A9EED26B89B7400AA37EE /* HabitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitView.swift; sourceTree = "<group>"; };
 		6D3A9EEF26B89C0900AA37EE /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
 		6D3A9EF126B89D5400AA37EE /* HabitUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitUIState.swift; sourceTree = "<group>"; };
+		6D3A9EFB26B9E90F00AA37EE /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		6DBB1AF526B4B29900722E22 /* SignInErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInErrorResponse.swift; sourceTree = "<group>"; };
 		6DBB1AF826B4B89100722E22 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		6DBB1AFA26B4BB8700722E22 /* SignInRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRemoteDataSource.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 		6D0891FB26ABA90100F7366B /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				6D3A9EF926B9E85400AA37EE /* Modifier */,
 				6D3A200D26ACE72200385C28 /* Button */,
 				6D0891FC26ABA91200F7366B /* EditText */,
 			);
@@ -448,6 +451,14 @@
 				6D3A9EF126B89D5400AA37EE /* HabitUIState.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6D3A9EF926B9E85400AA37EE /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				6D3A9EFB26B9E90F00AA37EE /* ButtonStyle.swift */,
+			);
+			path = Modifier;
 			sourceTree = "<group>";
 		};
 		6DBB1AF726B4B86600722E22 /* Interactor */ = {
@@ -594,6 +605,7 @@
 				6DBB1B1226B88AA400722E22 /* HomeView.swift in Sources */,
 				6DBB1B0B26B828E200722E22 /* SplashInteractor.swift in Sources */,
 				6D0891D826AA25AA00F7366B /* SignInViewRouter.swift in Sources */,
+				6D3A9EFC26B9E90F00AA37EE /* ButtonStyle.swift in Sources */,
 				6D26150C26B35B2D004F1FE0 /* ErrorResponse.swift in Sources */,
 				6D3A9EF026B89C0900AA37EE /* HabitViewModel.swift in Sources */,
 				6D3A9EEE26B89B7400AA37EE /* HabitView.swift in Sources */,

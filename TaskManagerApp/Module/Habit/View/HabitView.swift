@@ -17,7 +17,7 @@ struct HabitView: View {
             } else {
                 NavigationView {
                     ScrollView(showsIndicators: false) {
-                        VStack {
+                        VStack(spacing: 12) {
                             topContainer
                             
                             addButton
@@ -46,7 +46,7 @@ extension HabitView {
 
 extension HabitView {
     var topContainer: some View {
-        VStack {
+        VStack(alignment: .center, spacing: 12) {
             Image(systemName: "exclamationmark.triangle")
                 .resizable()
                 .scaledToFit()
@@ -79,9 +79,9 @@ extension HabitView {
     var addButton: some View {
         NavigationLink(destination: Text("Tela de adicionar")) {
             Label("Criar Hábito", systemImage: "plus.app")
+                .modifier(ButtonStyle())
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .border(/*@START_MENU_TOKEN@*/Color.black/*@END_MENU_TOKEN@*/)
         .padding(.horizontal, 16)
     }
 }
