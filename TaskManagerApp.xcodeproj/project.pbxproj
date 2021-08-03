@@ -39,6 +39,8 @@
 		6D3A9EF026B89C0900AA37EE /* HabitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9EEF26B89C0900AA37EE /* HabitViewModel.swift */; };
 		6D3A9EF226B89D5400AA37EE /* HabitUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9EF126B89D5400AA37EE /* HabitUIState.swift */; };
 		6D3A9EFC26B9E90F00AA37EE /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9EFB26B9E90F00AA37EE /* ButtonStyle.swift */; };
+		6D3A9F0126B9EE1900AA37EE /* HabitCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9F0026B9EE1900AA37EE /* HabitCardViewModel.swift */; };
+		6D3A9F0326B9EFF500AA37EE /* HabitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9F0226B9EFF400AA37EE /* HabitCardView.swift */; };
 		6DBB1AF626B4B29A00722E22 /* SignInErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AF526B4B29900722E22 /* SignInErrorResponse.swift */; };
 		6DBB1AF926B4B89100722E22 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AF826B4B89100722E22 /* SignInInteractor.swift */; };
 		6DBB1AFB26B4BB8700722E22 /* SignInRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AFA26B4BB8700722E22 /* SignInRemoteDataSource.swift */; };
@@ -88,6 +90,8 @@
 		6D3A9EEF26B89C0900AA37EE /* HabitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewModel.swift; sourceTree = "<group>"; };
 		6D3A9EF126B89D5400AA37EE /* HabitUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitUIState.swift; sourceTree = "<group>"; };
 		6D3A9EFB26B9E90F00AA37EE /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
+		6D3A9F0026B9EE1900AA37EE /* HabitCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardViewModel.swift; sourceTree = "<group>"; };
+		6D3A9F0226B9EFF400AA37EE /* HabitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardView.swift; sourceTree = "<group>"; };
 		6DBB1AF526B4B29900722E22 /* SignInErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInErrorResponse.swift; sourceTree = "<group>"; };
 		6DBB1AF826B4B89100722E22 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		6DBB1AFA26B4BB8700722E22 /* SignInRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRemoteDataSource.swift; sourceTree = "<group>"; };
@@ -433,6 +437,7 @@
 			isa = PBXGroup;
 			children = (
 				6D3A9EEF26B89C0900AA37EE /* HabitViewModel.swift */,
+				6D3A9F0026B9EE1900AA37EE /* HabitCardViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -441,6 +446,7 @@
 			isa = PBXGroup;
 			children = (
 				6D3A9EED26B89B7400AA37EE /* HabitView.swift */,
+				6D3A9F0226B9EFF400AA37EE /* HabitCardView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				6DBB1AF926B4B89100722E22 /* SignInInteractor.swift in Sources */,
 				6D3A201426AF9EEC00385C28 /* WebService.swift in Sources */,
 				6D0891D026A8D2FC00F7366B /* SignInViewModel.swift in Sources */,
+				6D3A9F0326B9EFF500AA37EE /* HabitCardView.swift in Sources */,
 				6D0891F026AB7C8200F7366B /* Gender.swift in Sources */,
 				6DBB1B1226B88AA400722E22 /* HomeView.swift in Sources */,
 				6DBB1B0B26B828E200722E22 /* SplashInteractor.swift in Sources */,
@@ -616,6 +623,7 @@
 				6D08920226ABA9C400F7366B /* CustomTextFieldStyle.swift in Sources */,
 				6D3A9EE826B89AB500AA37EE /* HomeViewRouter.swift in Sources */,
 				6D0891FE26ABA92B00F7366B /* EditTextView.swift in Sources */,
+				6D3A9F0126B9EE1900AA37EE /* HabitCardViewModel.swift in Sources */,
 				6D26150826B20C83004F1FE0 /* SignUpRequest.swift in Sources */,
 				6D0891D326A8D53100F7366B /* SplashViewRouter.swift in Sources */,
 				6D26151026B366E5004F1FE0 /* SignInResponse.swift in Sources */,
