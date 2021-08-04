@@ -14,6 +14,10 @@ enum WebService {
         handleCallRequest(path: path, method: method, contentType: .json, data: jsonData, completion: completion)
     }
     
+    public static func call(path: Endpoint, method: HttpMethod = .get, completion: @escaping (Result) -> Void) {
+        handleCallRequest(path: path, method: method, contentType: .json, data: nil, completion: completion)
+    }
+    
     public static func call(path: Endpoint, method: HttpMethod = .post, params: [URLQueryItem], completion: @escaping (Result) -> Void) {
         guard let urlRequest = completeURL(path: path) else { return }
         guard let absoluteURL = urlRequest.url?.absoluteString else { return }
@@ -35,6 +39,8 @@ extension WebService {
         case postUser = "/users"
         case login = "/auth/login"
         case refreshToken = "/auth/refresh-token"
+        
+        case habits = "/users/me/habits"
     }
     
     enum NetworkError {
