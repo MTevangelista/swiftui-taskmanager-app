@@ -71,7 +71,7 @@ struct HabitCardView: View {
             Rectangle()
                 .frame(width: 8)
                 .foregroundColor(viewModel.state)
-                .padding()
+                .padding(10)
         })
         .background(
             RoundedRectangle(cornerRadius: 4.0)

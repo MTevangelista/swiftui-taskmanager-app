@@ -24,8 +24,8 @@ struct HabitView: View {
                             
                             if case HabitUIState.emptyList = viewModel.uiState {
                                 emptyState
-                            } else if case HabitUIState.fullList =  viewModel.uiState {
-                                
+                            } else if case HabitUIState.fullList(let rows) = viewModel.uiState {
+                                fullState(rows: rows)
                             } else if case HabitUIState.error = viewModel.uiState {
                                 
                             }
@@ -34,6 +34,8 @@ struct HabitView: View {
                     .navigationTitle("Meus Hábitos")
                 }
             }
+        }.onAppear {
+            viewModel.onAppear()
         }
     }
 }
@@ -100,6 +102,15 @@ extension HabitView {
         }
     }
 }
+
+extension HabitView {
+    func fullState(rows: [HabitCardViewModel]) -> some View {
+        LazyVStack {
+            ForEach(rows, content: HabitCardView.init(viewModel:))
+        }
+    }
+}
+    
 
 struct HabitView_Previews: PreviewProvider {
     static var previews: some View {
