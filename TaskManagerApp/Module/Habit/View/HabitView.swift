@@ -26,8 +26,8 @@ struct HabitView: View {
                                 emptyState
                             } else if case HabitUIState.fullList(let rows) = viewModel.uiState {
                                 fullState(rows: rows)
-                            } else if case HabitUIState.error = viewModel.uiState {
-                                
+                            } else if case HabitUIState.error(let msg) = viewModel.uiState {
+                                errorState(errorMessage: msg)
                             }
                         }
                     }
@@ -110,7 +110,21 @@ extension HabitView {
         }
     }
 }
-    
+
+extension HabitView {
+    func errorState(errorMessage: String) -> some View {
+        Text("")
+            .alert(isPresented: .constant(true)) {
+                Alert(title: Text("Ops! \(errorMessage)"),
+                      message: Text("Tentar novamente?"),
+                      primaryButton: .default(Text("Sim")) {
+                        viewModel.onAppear()
+                      },
+                      secondaryButton: .cancel())
+            }
+    }
+}
+
 
 struct HabitView_Previews: PreviewProvider {
     static var previews: some View {
