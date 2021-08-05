@@ -14,7 +14,7 @@ enum WebService {
         handleCallRequest(path: path, method: method, contentType: .json, data: jsonData, completion: completion)
     }
     
-    public static func call(path: Endpoint, method: HttpMethod = .get, completion: @escaping (Result) -> Void) {
+    public static func call (path: Endpoint, method: HttpMethod = .get, completion: @escaping (Result) -> Void) {
         handleCallRequest(path: path, method: method, contentType: .json, data: nil, completion: completion)
     }
     

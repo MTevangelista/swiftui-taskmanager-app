@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct HabitCardView: View {
-    let viewModel: HabitCardViewModel
+    let viewModel: HabitCard
     
     @State private var action = false
     
@@ -88,13 +88,13 @@ struct HabitCardView_Previews: PreviewProvider {
         ForEach(ColorScheme.allCases, id: \.self) {
             NavigationView {
                 List {
-                    let viewModel = HabitCardViewModel(id: 1,
-                                                       icon: "https://via.placeholder.com/150",
-                                                       date: "01/01/2021 00:00:00",
-                                                       name: "Jogar Futebol",
-                                                       label: "horas",
-                                                       value: "2",
-                                                       state: .green)
+                    let viewModel = HabitCard(id: 1,
+                                              icon: "https://via.placeholder.com/150",
+                                              date: "01/01/2021 00:00:00",
+                                              name: "Jogar Futebol",
+                                              label: "horas",
+                                              value: "2",
+                                              state: .green)
                     
                     HabitCardView(viewModel: viewModel)
                     HabitCardView(viewModel: viewModel)

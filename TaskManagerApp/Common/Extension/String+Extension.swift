@@ -21,4 +21,22 @@ extension String {
     func hasMaxLenght(value: String, max: Int) -> Bool {
         return value.count > max
     }
+    
+    func toDate(sourcePattern source: String, destPattern dest: String) -> String? {
+        // Pegar a String -> dd/MM/yyyy -> Data
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = source
+        
+        let dateFormatted = formatter.date(from: self)
+        
+        // Validar a Data
+        guard let dateFormatted = dateFormatted else {
+            return nil
+        }
+        
+        // Date -> yyyy-MM-dd -> String
+        formatter.dateFormat = dest
+        return formatter.string(from: dateFormatted)
+    }
 }

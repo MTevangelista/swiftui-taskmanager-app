@@ -1,5 +1,5 @@
 //
-//  HabitCardViewModel.swift
+//  HabitCard.swift
 //  TaskManagerApp
 //
 //  Created by matheus.evangelista on 03/08/21.
@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct HabitCardViewModel: Identifiable, Equatable {
+struct HabitCard: Identifiable, Equatable {
     var id: Int = 0
     var icon: String = ""
     var date: String = ""
@@ -17,7 +17,7 @@ struct HabitCardViewModel: Identifiable, Equatable {
     var value: String = ""
     var state: Color = .green
     
-    static func == (lhs: HabitCardViewModel, rhs: HabitCardViewModel) -> Bool {
+    static func == (lhs: HabitCard, rhs: HabitCard) -> Bool {
         return lhs.id == rhs.id
     }
 }
