@@ -15,6 +15,8 @@ class HabitViewModel: ObservableObject {
     @Published var headline = ""
     @Published var description = ""
     
+    @Published var opened = false
+    
     private var cancellableRequest: AnyCancellable?
     
     private let interactor: HabitInteractor
@@ -28,6 +30,7 @@ class HabitViewModel: ObservableObject {
     }
     
     func onAppear() {
+        self.opened = true
         self.uiState = .loading
         
         cancellableRequest = interactor.fetchHabits()
@@ -49,6 +52,7 @@ class HabitViewModel: ObservableObject {
                 } else {
                     self.uiState = .fullList(
                         response.map {
+                            let dateToCompare = $0.lastDate?.toDate(sourcePattern: "yyyy-MM-dd'T'HH:mm:ss") ?? Date()
                             let lastDate = $0.lastDate?.toDate(sourcePattern: "yyyy-MM-dd'T'HH:mm:ss",
                                                                destPattern: "dd/MM/yyyy HH:mm") ?? ""
                             
@@ -57,7 +61,7 @@ class HabitViewModel: ObservableObject {
                             self.headline = "Seus hábitos estão em dia"
                             self.description = ""
                             
-                            if lastDate < Date().toString(destPattern: "dd/MM/yyyy") {
+                            if dateToCompare < Date() {
                                 state = .red
                                 self.title = "Atenção"
                                 self.headline = "Fique ligado!"
