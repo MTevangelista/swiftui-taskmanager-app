@@ -8,7 +8,7 @@
 import Foundation
 import SwiftUI
 
-struct HabitCard: Identifiable, Equatable {
+struct HabitCardViewModel: Identifiable, Equatable {
     var id: Int = 0
     var icon: String = ""
     var date: String = ""
@@ -17,7 +17,15 @@ struct HabitCard: Identifiable, Equatable {
     var value: String = ""
     var state: Color = .green
     
-    static func == (lhs: HabitCard, rhs: HabitCard) -> Bool {
+    static func == (lhs: HabitCardViewModel, rhs: HabitCardViewModel) -> Bool {
         return lhs.id == rhs.id
     }
+}
+
+extension HabitCardViewModel {
+    
+    func habitDetailView() -> some View {
+        return HabitCardViewRouter.makeHabitDetailView(id: id, name: name, label: label)
+    }
+    
 }

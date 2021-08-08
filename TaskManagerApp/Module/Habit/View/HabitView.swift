@@ -106,7 +106,7 @@ extension HabitView {
 }
 
 extension HabitView {
-    func fullState(rows: [HabitCard]) -> some View {
+    func fullState(rows: [HabitCardViewModel]) -> some View {
         LazyVStack {
             ForEach(rows, content: HabitCardView.init(viewModel:))
         }

@@ -68,7 +68,7 @@ class HabitViewModel: ObservableObject {
                                 self.description = "Você está atrasado nos hábitos"
                             }
                             
-                            return HabitCard(id: $0.id,
+                            return HabitCardViewModel(id: $0.id,
                                              icon: $0.iconUrl ?? "",
                                              date: lastDate,
                                              name: $0.name,

@@ -10,6 +10,8 @@ import SwiftUI
 struct HabitDetailView: View {
     @ObservedObject var viewModel: HabitDetailViewModel
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+    
     init(viewModel: HabitDetailViewModel) {
         self.viewModel = viewModel
     }
@@ -42,6 +44,16 @@ struct HabitDetailView: View {
             }, text: "Salvar",
             showProgress: self.viewModel.uiState == .loading,
             disabled: self.viewModel.value.isEmpty)
+                .padding(.horizontal, 16)
+                .padding(.vertical, 8)
+            
+            Button("Cancelar") {
+                DispatchQueue.main.async {
+                    withAnimation(.easeOut(duration: 0.15)) {
+                        self.presentationMode.wrappedValue.dismiss()
+                    }
+                }
+            }.modifier(ButtonStyle())
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
             

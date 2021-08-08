@@ -8,14 +8,14 @@
 import SwiftUI
 
 struct HabitCardView: View {
-    let viewModel: HabitCard
+    let viewModel: HabitCardViewModel
     
     @State private var action = false
     
     var body: some View {
         ZStack(alignment: .trailing, content: {
             NavigationLink(
-                destination: Text("Destination"),
+                destination: viewModel.habitDetailView(),
                 isActive: self.$action,
                 label: {
                     EmptyView()
@@ -88,7 +88,7 @@ struct HabitCardView_Previews: PreviewProvider {
         ForEach(ColorScheme.allCases, id: \.self) {
             NavigationView {
                 List {
-                    let viewModel = HabitCard(id: 1,
+                    let viewModel = HabitCardViewModel(id: 1,
                                               icon: "https://via.placeholder.com/150",
                                               date: "01/01/2021 00:00:00",
                                               name: "Jogar Futebol",
