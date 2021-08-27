@@ -35,6 +35,7 @@ class HabitDetailViewModel: ObservableObject {
         self.uiState = .loading
         
         cancellable = interactor.save(habitId: id, HabitValueRequest: .init(value: value))
+            .receive(on: DispatchQueue.main)
             .sink(receiveCompletion: { completion in
                 switch completion {
                 case .failure(let appError):
