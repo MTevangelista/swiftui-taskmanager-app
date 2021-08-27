@@ -8,23 +8,29 @@
 import Foundation
 
 enum WebService {
-    public static func call<T: Encodable>(path: Endpoint, method: HttpMethod = .get, body: T, completion: @escaping (Result) -> Void) {
+    public static func call<T: Encodable>(path: String, method: HttpMethod = .get, body: T, completion: @escaping (Result) -> Void) {
         guard let jsonData = try? JSONEncoder().encode(body) else { return }
         
         handleCallRequest(path: path, method: method, contentType: .json, data: jsonData, completion: completion)
     }
     
-    public static func call (path: Endpoint, method: HttpMethod = .get, completion: @escaping (Result) -> Void) {
-        handleCallRequest(path: path, method: method, contentType: .json, data: nil, completion: completion)
+    public static func call<T: Encodable>(path: Endpoint, method: HttpMethod = .get, body: T, completion: @escaping (Result) -> Void) {
+        guard let jsonData = try? JSONEncoder().encode(body) else { return }
+        
+        handleCallRequest(path: path.rawValue, method: method, contentType: .json, data: jsonData, completion: completion)
+    }
+    
+    public static func call(path: Endpoint, method: HttpMethod = .get, completion: @escaping (Result) -> Void) {
+        handleCallRequest(path: path.rawValue, method: method, contentType: .json, data: nil, completion: completion)
     }
     
     public static func call(path: Endpoint, method: HttpMethod = .post, params: [URLQueryItem], completion: @escaping (Result) -> Void) {
-        guard let urlRequest = completeURL(path: path) else { return }
+        guard let urlRequest = completeURL(path: path.rawValue) else { return }
         guard let absoluteURL = urlRequest.url?.absoluteString else { return }
         var components = URLComponents(string: absoluteURL)
         components?.queryItems = params
         
-        handleCallRequest(path: path,
+        handleCallRequest(path: path.rawValue,
                           method: method,
                           contentType: .formUrl,
                           data: components?.query?.data(using: .utf8),
@@ -41,6 +47,7 @@ extension WebService {
         case refreshToken = "/auth/refresh-token"
         
         case habits = "/users/me/habits"
+        case habitValues = "/users/me/habits/%d/values"
     }
     
     enum NetworkError {
@@ -69,13 +76,13 @@ extension WebService {
 }
 
 extension WebService {
-    private static func completeURL(path: Endpoint) -> URLRequest? {
-        guard let url = URL(string: "\(Endpoint.base.rawValue)\(path.rawValue)") else { return nil }
+    private static func completeURL(path: String) -> URLRequest? {
+        guard let url = URL(string: "\(Endpoint.base.rawValue)\(path)") else { return nil }
         
         return URLRequest(url: url)
     }
     
-    private static func handleCallRequest(path: Endpoint, method: HttpMethod, contentType: ContentType, data: Data?, completion: @escaping (Result) -> Void) {
+    private static func handleCallRequest(path: String, method: HttpMethod, contentType: ContentType, data: Data?, completion: @escaping (Result) -> Void) {
         guard var urlRequest = completeURL(path: path) else { return }
         
         _ = LocalDataSource.shared.getUserAuth()

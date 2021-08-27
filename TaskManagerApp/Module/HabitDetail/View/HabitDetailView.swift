@@ -40,7 +40,7 @@ struct HabitDetailView: View {
             Text("Os registros devem ser feitos em até 24h.\n Hábitos se constroem todos os dias :)")
             
             LoadingButtonView(action: {
-                
+                viewModel.save()
             }, text: "Salvar",
             showProgress: self.viewModel.uiState == .loading,
             disabled: self.viewModel.value.isEmpty)
@@ -69,7 +69,8 @@ struct HabitDetailView_Previews: PreviewProvider {
         ForEach(ColorScheme.allCases, id: \.self) {
             HabitDetailView(viewModel: HabitDetailViewModel(id: 0,
                                                             name: "Tocar guitarra",
-                                                            label: "horas"))
+                                                            label: "horas",
+                                                            interactor: HabitDetailInteractor()))
                 .preferredColorScheme($0)
         }
     }

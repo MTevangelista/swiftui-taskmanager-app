@@ -35,6 +35,9 @@
 		6D27F2D626BDE994004A2A74 /* HabitDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D27F2D526BDE994004A2A74 /* HabitDetailViewModel.swift */; };
 		6D27F2D826BDEA5A004A2A74 /* HabitDetailUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D27F2D726BDEA5A004A2A74 /* HabitDetailUIState.swift */; };
 		6D27F2DB26BDF41F004A2A74 /* HabitCardViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D27F2DA26BDF41F004A2A74 /* HabitCardViewRouter.swift */; };
+		6D27F2DD26C076DD004A2A74 /* HabitValueRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D27F2DC26C076DD004A2A74 /* HabitValueRequest.swift */; };
+		6D27F2E126C07780004A2A74 /* HabitDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D27F2E026C07780004A2A74 /* HabitDetailDataSource.swift */; };
+		6D27F2E326C07A62004A2A74 /* HabitDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D27F2E226C07A62004A2A74 /* HabitDetailInteractor.swift */; };
 		6D3A200C26ACE19500385C28 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A200B26ACE19500385C28 /* String+Extension.swift */; };
 		6D3A201126ACE78000385C28 /* LoadingButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A201026ACE78000385C28 /* LoadingButtonView.swift */; };
 		6D3A201426AF9EEC00385C28 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A201326AF9EEC00385C28 /* WebService.swift */; };
@@ -94,6 +97,9 @@
 		6D27F2D526BDE994004A2A74 /* HabitDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailViewModel.swift; sourceTree = "<group>"; };
 		6D27F2D726BDEA5A004A2A74 /* HabitDetailUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailUIState.swift; sourceTree = "<group>"; };
 		6D27F2DA26BDF41F004A2A74 /* HabitCardViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardViewRouter.swift; sourceTree = "<group>"; };
+		6D27F2DC26C076DD004A2A74 /* HabitValueRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitValueRequest.swift; sourceTree = "<group>"; };
+		6D27F2E026C07780004A2A74 /* HabitDetailDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailDataSource.swift; sourceTree = "<group>"; };
+		6D27F2E226C07A62004A2A74 /* HabitDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailInteractor.swift; sourceTree = "<group>"; };
 		6D3A200B26ACE19500385C28 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		6D3A201026ACE78000385C28 /* LoadingButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButtonView.swift; sourceTree = "<group>"; };
 		6D3A201326AF9EEC00385C28 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
@@ -413,6 +419,8 @@
 				6D27F2D226BDE93D004A2A74 /* Model */,
 				6D27F2D126BDE935004A2A74 /* View */,
 				6D27F2D026BDE92B004A2A74 /* ViewModel */,
+				6D27F2DE26C07733004A2A74 /* Interactor */,
+				6D27F2DF26C0773F004A2A74 /* DataSource */,
 			);
 			path = HabitDetail;
 			sourceTree = "<group>";
@@ -437,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				6D27F2D726BDEA5A004A2A74 /* HabitDetailUIState.swift */,
+				6D27F2DC26C076DD004A2A74 /* HabitValueRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -447,6 +456,22 @@
 				6D27F2DA26BDF41F004A2A74 /* HabitCardViewRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		6D27F2DE26C07733004A2A74 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				6D27F2E226C07A62004A2A74 /* HabitDetailInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		6D27F2DF26C0773F004A2A74 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				6D27F2E026C07780004A2A74 /* HabitDetailDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 		6D3A200A26ACE15600385C28 /* Extension */ = {
@@ -674,8 +699,10 @@
 				6D0891EA26AB679300F7366B /* SignUpViewModel.swift in Sources */,
 				6DBB1B0226B5A7F800722E22 /* SignUpRemoteDataSource.swift in Sources */,
 				6D27F2D626BDE994004A2A74 /* HabitDetailViewModel.swift in Sources */,
+				6D27F2E126C07780004A2A74 /* HabitDetailDataSource.swift in Sources */,
 				6DBB1AFB26B4BB8700722E22 /* SignInRemoteDataSource.swift in Sources */,
 				6D3A201126ACE78000385C28 /* LoadingButtonView.swift in Sources */,
+				6D27F2E326C07A62004A2A74 /* HabitDetailInteractor.swift in Sources */,
 				6D0891E226AA272100F7366B /* HomeViewModel.swift in Sources */,
 				6DBB1B0826B81B6200722E22 /* LocalDataSource.swift in Sources */,
 				6DBB1AF626B4B29A00722E22 /* SignInErrorResponse.swift in Sources */,
@@ -693,6 +720,7 @@
 				6D3A201426AF9EEC00385C28 /* WebService.swift in Sources */,
 				6D0891D026A8D2FC00F7366B /* SignInViewModel.swift in Sources */,
 				6D3A9F0326B9EFF500AA37EE /* HabitCardView.swift in Sources */,
+				6D27F2DD26C076DD004A2A74 /* HabitValueRequest.swift in Sources */,
 				6D9621AA26BB50DB00B61F1F /* HabitInteractor.swift in Sources */,
 				6D27F2D826BDEA5A004A2A74 /* HabitDetailUIState.swift in Sources */,
 				6D0891F026AB7C8200F7366B /* Gender.swift in Sources */,
