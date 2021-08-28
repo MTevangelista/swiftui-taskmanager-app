@@ -47,6 +47,8 @@
 		6D3A9EFC26B9E90F00AA37EE /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9EFB26B9E90F00AA37EE /* ButtonStyle.swift */; };
 		6D3A9F0126B9EE1900AA37EE /* HabitCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9F0026B9EE1900AA37EE /* HabitCardViewModel.swift */; };
 		6D3A9F0326B9EFF500AA37EE /* HabitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9F0226B9EFF400AA37EE /* HabitCardView.swift */; };
+		6D4EA62926D9C1A000FF5A62 /* imageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4EA62826D9C1A000FF5A62 /* imageView.swift */; };
+		6D4EA62B26D9C22A00FF5A62 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4EA62A26D9C22A00FF5A62 /* ImageLoader.swift */; };
 		6D9621A226BB315400B61F1F /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9EED26B89B7400AA37EE /* HabitView.swift */; };
 		6D9621A426BB4BED00B61F1F /* HabitResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9621A326BB4BED00B61F1F /* HabitResponse.swift */; };
 		6D9621A826BB4DF800B61F1F /* HabitRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9621A726BB4DF800B61F1F /* HabitRemoteDataSource.swift */; };
@@ -110,6 +112,8 @@
 		6D3A9EFB26B9E90F00AA37EE /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		6D3A9F0026B9EE1900AA37EE /* HabitCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardViewModel.swift; sourceTree = "<group>"; };
 		6D3A9F0226B9EFF400AA37EE /* HabitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardView.swift; sourceTree = "<group>"; };
+		6D4EA62826D9C1A000FF5A62 /* imageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageView.swift; sourceTree = "<group>"; };
+		6D4EA62A26D9C22A00FF5A62 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		6D9621A326BB4BED00B61F1F /* HabitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitResponse.swift; sourceTree = "<group>"; };
 		6D9621A726BB4DF800B61F1F /* HabitRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitRemoteDataSource.swift; sourceTree = "<group>"; };
 		6D9621A926BB50DB00B61F1F /* HabitInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitInteractor.swift; sourceTree = "<group>"; };
@@ -389,6 +393,7 @@
 		6D0891FB26ABA90100F7366B /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				6D4EA62526D9C14A00FF5A62 /* Image */,
 				6D3A9EF926B9E85400AA37EE /* Modifier */,
 				6D3A200D26ACE72200385C28 /* Button */,
 				6D0891FC26ABA91200F7366B /* EditText */,
@@ -554,6 +559,15 @@
 				6D3A9EFB26B9E90F00AA37EE /* ButtonStyle.swift */,
 			);
 			path = Modifier;
+			sourceTree = "<group>";
+		};
+		6D4EA62526D9C14A00FF5A62 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+				6D4EA62826D9C1A000FF5A62 /* imageView.swift */,
+				6D4EA62A26D9C22A00FF5A62 /* ImageLoader.swift */,
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 		6D9621A526BB4DCF00B61F1F /* Interactor */ = {
@@ -736,7 +750,9 @@
 				6D0891D526A8EEB300F7366B /* SignInUIState.swift in Sources */,
 				6DBB1B0026B5A62500722E22 /* SignUpInteractor.swift in Sources */,
 				6D08920226ABA9C400F7366B /* CustomTextFieldStyle.swift in Sources */,
+				6D4EA62B26D9C22A00FF5A62 /* ImageLoader.swift in Sources */,
 				6D3A9EE826B89AB500AA37EE /* HomeViewRouter.swift in Sources */,
+				6D4EA62926D9C1A000FF5A62 /* imageView.swift in Sources */,
 				6D0891FE26ABA92B00F7366B /* EditTextView.swift in Sources */,
 				6D3A9F0126B9EE1900AA37EE /* HabitCardViewModel.swift in Sources */,
 				6D9621A426BB4BED00B61F1F /* HabitResponse.swift in Sources */,
