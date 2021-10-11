@@ -14,7 +14,7 @@ struct SignUpInteractor {
     private let local: LocalDataSource = .shared
 }
 
-// MARK: - Local Data Source
+// MARK: - Remote Data Source
 extension SignUpInteractor {
     func postUser(request: SignUpRequest) -> Future<Bool, AppError> {
         return remoteSignUp.postUser(request: request)

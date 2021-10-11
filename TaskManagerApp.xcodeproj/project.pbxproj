@@ -69,6 +69,10 @@
 		6DBB1B1226B88AA400722E22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1B1126B88AA400722E22 /* HomeView.swift */; };
 		6DC25B6E26F36F08008A4093 /* ProfileConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC25B6D26F36F08008A4093 /* ProfileConstants.swift */; };
 		6DEB370E2710ABE7009B31D3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB370D2710ABE7009B31D3 /* ProfileViewModel.swift */; };
+		6DEB37122714A776009B31D3 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB37112714A776009B31D3 /* ProfileResponse.swift */; };
+		6DEB37152714A8B5009B31D3 /* ProfileRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB37142714A8B5009B31D3 /* ProfileRemoteDataSource.swift */; };
+		6DEB37182714AD5E009B31D3 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB37172714AD5E009B31D3 /* ProfileInteractor.swift */; };
+		6DEB371A2714AE90009B31D3 /* ProfileUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB37192714AE90009B31D3 /* ProfileUIState.swift */; };
 		6DECBB52270FAA5D00EBFCC6 /* GenderSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DECBB51270FAA5D00EBFCC6 /* GenderSelectorView.swift */; };
 /* End PBXBuildFile section */
 
@@ -137,6 +141,10 @@
 		6DBB1B1126B88AA400722E22 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6DC25B6D26F36F08008A4093 /* ProfileConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConstants.swift; sourceTree = "<group>"; };
 		6DEB370D2710ABE7009B31D3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
+		6DEB37112714A776009B31D3 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
+		6DEB37142714A8B5009B31D3 /* ProfileRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRemoteDataSource.swift; sourceTree = "<group>"; };
+		6DEB37172714AD5E009B31D3 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
+		6DEB37192714AE90009B31D3 /* ProfileUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUIState.swift; sourceTree = "<group>"; };
 		6DECBB51270FAA5D00EBFCC6 /* GenderSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -495,6 +503,8 @@
 				6D3198DA26E113B1008BEBA3 /* Model */,
 				6D3198D926E1139C008BEBA3 /* View */,
 				6D3198D826E11392008BEBA3 /* ViewModel */,
+				6DEB37162714AD44009B31D3 /* Interactor */,
+				6DEB37132714A85F009B31D3 /* DataSource */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -519,6 +529,8 @@
 		6D3198DA26E113B1008BEBA3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				6DEB37112714A776009B31D3 /* ProfileResponse.swift */,
+				6DEB37192714AE90009B31D3 /* ProfileUIState.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -686,6 +698,22 @@
 			path = Helper;
 			sourceTree = "<group>";
 		};
+		6DEB37132714A85F009B31D3 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				6DEB37142714A8B5009B31D3 /* ProfileRemoteDataSource.swift */,
+			);
+			path = DataSource;
+			sourceTree = "<group>";
+		};
+		6DEB37162714AD44009B31D3 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				6DEB37172714AD5E009B31D3 /* ProfileInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -760,7 +788,9 @@
 				6D0891C526A77BB300F7366B /* SplashUIState.swift in Sources */,
 				6DBB1AFD26B596E500722E22 /* AppError.swift in Sources */,
 				6DBB1B1026B85A4000722E22 /* SplashRemoteDataSource.swift in Sources */,
+				6DEB37152714A8B5009B31D3 /* ProfileRemoteDataSource.swift in Sources */,
 				6D9621B426BC950C00B61F1F /* Date+Extension.swift in Sources */,
+				6DEB37122714A776009B31D3 /* ProfileResponse.swift in Sources */,
 				6D27F2DB26BDF41F004A2A74 /* HabitCardViewRouter.swift in Sources */,
 				6DC25B6E26F36F08008A4093 /* ProfileConstants.swift in Sources */,
 				6D0891EA26AB679300F7366B /* SignUpViewModel.swift in Sources */,
@@ -783,6 +813,7 @@
 				6D0891E826AB675900F7366B /* SignUpView.swift in Sources */,
 				6D9621A226BB315400B61F1F /* HabitView.swift in Sources */,
 				6D0891F526AB835000F7366B /* SignUpViewRouter.swift in Sources */,
+				6DEB37182714AD5E009B31D3 /* ProfileInteractor.swift in Sources */,
 				6D0891B126A779DD00F7366B /* TaskManagerAppApp.swift in Sources */,
 				6DBB1B0D26B8407D00722E22 /* RefreshToken.swift in Sources */,
 				6DBB1AF926B4B89100722E22 /* SignInInteractor.swift in Sources */,
@@ -799,6 +830,7 @@
 				6D0891D826AA25AA00F7366B /* SignInViewRouter.swift in Sources */,
 				6D3A9EFC26B9E90F00AA37EE /* ButtonStyle.swift in Sources */,
 				6D3198DF26E11401008BEBA3 /* ProfileView.swift in Sources */,
+				6DEB371A2714AE90009B31D3 /* ProfileUIState.swift in Sources */,
 				6D26150C26B35B2D004F1FE0 /* ErrorResponse.swift in Sources */,
 				6D3A9EF026B89C0900AA37EE /* HabitViewModel.swift in Sources */,
 				6D0891C326A77B1A00F7366B /* SplashView.swift in Sources */,
