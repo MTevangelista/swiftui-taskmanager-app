@@ -16,6 +16,12 @@ struct ProfileView: View {
     @State var birthday = "00/00/000"
     @State var selectedGender: Gender? = .male
     
+    var disableDone: Bool {
+        viewModel.fullNameValidation.failure
+            || viewModel.phoneValidation.failure
+            || viewModel.birthdayValidation.failure
+    }
+    
     var body: some View {
         NavigationView {
             
@@ -75,6 +81,11 @@ struct ProfileView: View {
             }
             
             .navigationBarTitle(Text(ProfileConstants.Navigation.barTitle), displayMode: .automatic)
+            .navigationBarItems(trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
+                Image(systemName: ProfileConstants.Icon.checkmark)
+                    .foregroundColor(.orange)
+            }).opacity(disableDone ? 0 : 1))
+            
         }
     }
 }

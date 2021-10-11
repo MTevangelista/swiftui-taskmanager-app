@@ -69,7 +69,6 @@
 		6DBB1B1226B88AA400722E22 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1B1126B88AA400722E22 /* HomeView.swift */; };
 		6DC25B6E26F36F08008A4093 /* ProfileConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC25B6D26F36F08008A4093 /* ProfileConstants.swift */; };
 		6DEB370E2710ABE7009B31D3 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB370D2710ABE7009B31D3 /* ProfileViewModel.swift */; };
-		6DEB37102710ADA8009B31D3 /* FullNameValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB370F2710ADA8009B31D3 /* FullNameValidation.swift */; };
 		6DECBB52270FAA5D00EBFCC6 /* GenderSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DECBB51270FAA5D00EBFCC6 /* GenderSelectorView.swift */; };
 /* End PBXBuildFile section */
 
@@ -138,7 +137,6 @@
 		6DBB1B1126B88AA400722E22 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		6DC25B6D26F36F08008A4093 /* ProfileConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileConstants.swift; sourceTree = "<group>"; };
 		6DEB370D2710ABE7009B31D3 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
-		6DEB370F2710ADA8009B31D3 /* FullNameValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullNameValidation.swift; sourceTree = "<group>"; };
 		6DECBB51270FAA5D00EBFCC6 /* GenderSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -684,7 +682,6 @@
 			isa = PBXGroup;
 			children = (
 				6DC25B6D26F36F08008A4093 /* ProfileConstants.swift */,
-				6DEB370F2710ADA8009B31D3 /* FullNameValidation.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -782,7 +779,6 @@
 				6D27F2D426BDE97A004A2A74 /* HabitDetailView.swift in Sources */,
 				6D3A200C26ACE19500385C28 /* String+Extension.swift in Sources */,
 				6D26150E26B365B5004F1FE0 /* SignInRequest.swift in Sources */,
-				6DEB37102710ADA8009B31D3 /* FullNameValidation.swift in Sources */,
 				6D0891F226AB826400F7366B /* SignUpUIState.swift in Sources */,
 				6D0891E826AB675900F7366B /* SignUpView.swift in Sources */,
 				6D9621A226BB315400B61F1F /* HabitView.swift in Sources */,
