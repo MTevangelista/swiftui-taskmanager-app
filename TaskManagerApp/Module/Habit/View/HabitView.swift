@@ -18,9 +18,10 @@ struct HabitView: View {
                 NavigationView {
                     ScrollView(showsIndicators: false) {
                         VStack(spacing: 12) {
-                            topContainer
-                            
-                            addButton
+                            if !viewModel.isCharts {
+                                topContainer
+                                addButton
+                            }
                             
                             if case HabitUIState.emptyList = viewModel.uiState {
                                 emptyState
@@ -108,7 +109,9 @@ extension HabitView {
 extension HabitView {
     func fullState(rows: [HabitCardViewModel]) -> some View {
         LazyVStack {
-            ForEach(rows, content: HabitCardView.init(viewModel:))
+            ForEach(rows) { row in
+                HabitCardView(isChart: viewModel.isCharts, viewModel: row)
+            }
         }
     }
 }
@@ -131,7 +134,7 @@ extension HabitView {
 struct HabitView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
-            HomeViewRouter.makeHabitView(viewModel: HabitViewModel(interactor: HabitInteractor()))
+            HomeViewRouter.makeHabitView(viewModel: HabitViewModel(isCharts: false, interactor: HabitInteractor()))
                 .preferredColorScheme($0)
         }
     }

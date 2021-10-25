@@ -9,19 +9,30 @@ import SwiftUI
 import Combine
 
 struct HabitCardView: View {
+    let isChart: Bool
     let viewModel: HabitCardViewModel
     
     @State private var action = false
     
     var body: some View {
         ZStack(alignment: .trailing, content: {
-            NavigationLink(
-                destination: viewModel.habitDetailView(),
-                isActive: self.$action,
-                label: {
-                    EmptyView()
-                }
-            )
+            if isChart {
+                NavigationLink(
+                    destination: viewModel.chartView(),
+                    isActive: self.$action,
+                    label: {
+                        EmptyView()
+                    }
+                )
+            } else {
+                NavigationLink(
+                    destination: viewModel.habitDetailView(),
+                    isActive: self.$action,
+                    label: {
+                        EmptyView()
+                    }
+                )
+            }
             
             Button(action: {
                 self.action = true
@@ -71,10 +82,13 @@ struct HabitCardView: View {
                 .padding()
                 .cornerRadius(4.0)
             })
-            Rectangle()
-                .frame(width: 8)
-                .foregroundColor(viewModel.state)
-                .padding(10)
+            
+            if !isChart {
+                Rectangle()
+                    .frame(width: 8)
+                    .foregroundColor(viewModel.state)
+                    .padding(10)
+            }
         })
         .background(
             RoundedRectangle(cornerRadius: 4.0)
@@ -100,8 +114,8 @@ struct HabitCardView_Previews: PreviewProvider {
                                               state: .green,
                                               habitPublisher: PassthroughSubject<Bool, Never>())
                     
-                    HabitCardView(viewModel: viewModel)
-                    HabitCardView(viewModel: viewModel)
+                    HabitCardView(isChart: true, viewModel: viewModel)
+                    HabitCardView(isChart: false, viewModel: viewModel)
                 }
                 .frame(maxWidth: .infinity)
                 .navigationTitle("Teste")
