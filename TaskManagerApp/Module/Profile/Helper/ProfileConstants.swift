@@ -8,6 +8,12 @@ public enum ProfileConstants {
         public static let checkmark = "checkmark"
     }
     
+    public enum Alert {
+        public static let title = "Task Manager"
+        public static let successfullyUpdatedData = "Dados atualizados com sucesso"
+        public static let ok = "OK"
+    }
+    
     public enum Navigation {
         public static let barTitle = "Editar Perfil"
         public static let selectGender = "Escolha o gênero"

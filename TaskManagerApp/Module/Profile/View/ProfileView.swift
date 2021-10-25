@@ -23,69 +23,90 @@ struct ProfileView: View {
                 ProgressView()
             } else {
                 NavigationView {
-                
-                VStack {
-                    Form {
-                        Section(header: Text(ProfileConstants.Form.headerTitle)) {
-                            presentField(withTitle: ProfileConstants.Field.name.title,
-                                         textFieldPlaceholder: ProfileConstants.Field.name.placeholder,
-                                         textFieldText: $viewModel.fullNameValidation.value,
-                                         keyboardType: .alphabet)
-                            
-                            if viewModel.fullNameValidation.failure {
-                                Text(ProfileConstants.ErrorMessage.invalidName)
-                                    .foregroundColor(.red)
+                    VStack {
+                        Form {
+                            Section(header: Text(ProfileConstants.Form.headerTitle)) {
+                                presentField(withTitle: ProfileConstants.Field.name.title,
+                                             textFieldPlaceholder: ProfileConstants.Field.name.placeholder,
+                                             textFieldText: $viewModel.fullNameValidation.value,
+                                             keyboardType: .alphabet)
+                                
+                                if viewModel.fullNameValidation.failure {
+                                    Text(ProfileConstants.ErrorMessage.invalidName)
+                                        .foregroundColor(.red)
+                                }
+                                
+                                presentField(withTitle: ProfileConstants.Field.email,
+                                             textFieldText: $viewModel.email,
+                                             isDisabled: true)
+                                
+                                presentField(withTitle: ProfileConstants.Field.cpf,
+                                             textFieldText: $viewModel.document,
+                                             isDisabled: true)
+                                
+                                presentField(withTitle: ProfileConstants.Field.phone.title,
+                                             textFieldPlaceholder: ProfileConstants.Field.phone.placeholder,
+                                             textFieldText: $viewModel.phoneValidation.value,
+                                             keyboardType: .numberPad)
+                                
+                                if viewModel.phoneValidation.failure {
+                                    Text(ProfileConstants.ErrorMessage.invalidPhone)
+                                        .foregroundColor(.red)
+                                }
+                                
+                                presentField(withTitle: ProfileConstants.Field.birthday.title,
+                                             textFieldPlaceholder: ProfileConstants.Field.birthday.placeholder,
+                                             textFieldText: $viewModel.birthdayValidation.value)
+                                
+                                if viewModel.birthdayValidation.failure {
+                                    Text(ProfileConstants.ErrorMessage.invalidDate)
+                                        .foregroundColor(.red)
+                                }
+                                
+                                NavigationLink(
+                                    destination: GenderSelectorView(selectedGender: $viewModel.gender,
+                                                                    genders: Gender.allCases,
+                                                                    title: ProfileConstants.Navigation.selectGender),
+                                    label: {
+                                        Text(ProfileConstants.Navigation.gender)
+                                        Spacer()
+                                        Text(viewModel.gender?.rawValue ?? "")
+                                    })
                             }
                             
-                            presentField(withTitle: ProfileConstants.Field.email,
-                                         textFieldText: $viewModel.email,
-                                         isDisabled: true)
-                            
-                            presentField(withTitle: ProfileConstants.Field.cpf,
-                                         textFieldText: $viewModel.document,
-                                         isDisabled: true)
-                            
-                            presentField(withTitle: ProfileConstants.Field.phone.title,
-                                         textFieldPlaceholder: ProfileConstants.Field.phone.placeholder,
-                                         textFieldText: $viewModel.phoneValidation.value,
-                                         keyboardType: .numberPad)
-                            
-                            if viewModel.phoneValidation.failure {
-                                Text(ProfileConstants.ErrorMessage.invalidPhone)
-                                    .foregroundColor(.red)
-                            }
-                            
-                            presentField(withTitle: ProfileConstants.Field.birthday.title,
-                                         textFieldPlaceholder: ProfileConstants.Field.birthday.placeholder,
-                                         textFieldText: $viewModel.birthdayValidation.value)
-                            
-                            if viewModel.birthdayValidation.failure {
-                                Text(ProfileConstants.ErrorMessage.invalidDate)
-                                    .foregroundColor(.red)
-                            }
-                            
-                            NavigationLink(
-                                destination: GenderSelectorView(selectedGender: $viewModel.gender,
-                                                                genders: Gender.allCases,
-                                                                title: ProfileConstants.Navigation.selectGender),
-                                label: {
-                                    Text(ProfileConstants.Navigation.gender)
-                                    Spacer()
-                                    Text(viewModel.gender?.rawValue ?? "")
-                                })
                         }
                         
                     }
-                    
+                    .navigationBarTitle(Text(ProfileConstants.Navigation.barTitle), displayMode: .automatic)
+                    .navigationBarItems(trailing: Button(action: {
+                        viewModel.updateUser()
+                    }, label: {
+                        if case ProfileUIState.updateLoading = viewModel.uiState {
+                            ProgressView()
+                        } else {
+                            Image(systemName: ProfileConstants.Icon.checkmark)
+                                .foregroundColor(.orange)
+                        }
+                    })
+                    .alert(isPresented: .constant(viewModel.uiState == .updateSuccess), content: {
+                        Alert(title: Text("Task Manager"),
+                              message: Text("Dados atualizados com suceeso"),
+                              dismissButton: .default(Text("OK")) {
+                                viewModel.uiState = .none
+                              })
+                    })
+                    .opacity(disableDone ? 0 : 1)
+                    )
                 }
-                
-                .navigationBarTitle(Text(ProfileConstants.Navigation.barTitle), displayMode: .automatic)
-                .navigationBarItems(trailing: Button(action: /*@START_MENU_TOKEN@*/{}/*@END_MENU_TOKEN@*/, label: {
-                    Image(systemName: ProfileConstants.Icon.checkmark)
-                        .foregroundColor(.orange)
-                }).opacity(disableDone ? 0 : 1))
-                
             }
+            
+            if case ProfileUIState.updateError(let value) = viewModel.uiState {
+                Text("")
+                    .alert(isPresented: .constant(true), content: {
+                        Alert(title: Text("Task Manager"), message: Text(value), dismissButton: .default(Text("OK")) {
+                            viewModel.uiState = .none
+                        })
+                    })
             }
             
             if case ProfileUIState.fetchError(let value) = viewModel.uiState {
@@ -94,7 +115,8 @@ struct ProfileView: View {
                         Alert(title: Text("Task Manager"), message: Text(value), dismissButton: .default(Text("OK")) {
                             // faz algo quando some o alerta
                         })
-                    })            }
+                    })
+            }
         }.onAppear(perform: {
             viewModel.fetchUser()
         })

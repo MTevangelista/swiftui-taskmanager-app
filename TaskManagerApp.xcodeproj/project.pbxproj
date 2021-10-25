@@ -73,6 +73,7 @@
 		6DEB37152714A8B5009B31D3 /* ProfileRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB37142714A8B5009B31D3 /* ProfileRemoteDataSource.swift */; };
 		6DEB37182714AD5E009B31D3 /* ProfileInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB37172714AD5E009B31D3 /* ProfileInteractor.swift */; };
 		6DEB371A2714AE90009B31D3 /* ProfileUIState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB37192714AE90009B31D3 /* ProfileUIState.swift */; };
+		6DEB371C2714CA4C009B31D3 /* ProfileRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB371B2714CA4B009B31D3 /* ProfileRequest.swift */; };
 		6DECBB52270FAA5D00EBFCC6 /* GenderSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DECBB51270FAA5D00EBFCC6 /* GenderSelectorView.swift */; };
 /* End PBXBuildFile section */
 
@@ -145,6 +146,7 @@
 		6DEB37142714A8B5009B31D3 /* ProfileRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRemoteDataSource.swift; sourceTree = "<group>"; };
 		6DEB37172714AD5E009B31D3 /* ProfileInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInteractor.swift; sourceTree = "<group>"; };
 		6DEB37192714AE90009B31D3 /* ProfileUIState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileUIState.swift; sourceTree = "<group>"; };
+		6DEB371B2714CA4B009B31D3 /* ProfileRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRequest.swift; sourceTree = "<group>"; };
 		6DECBB51270FAA5D00EBFCC6 /* GenderSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -531,6 +533,7 @@
 			children = (
 				6DEB37112714A776009B31D3 /* ProfileResponse.swift */,
 				6DEB37192714AE90009B31D3 /* ProfileUIState.swift */,
+				6DEB371B2714CA4B009B31D3 /* ProfileRequest.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -812,6 +815,7 @@
 				6D0891F226AB826400F7366B /* SignUpUIState.swift in Sources */,
 				6D0891E826AB675900F7366B /* SignUpView.swift in Sources */,
 				6D9621A226BB315400B61F1F /* HabitView.swift in Sources */,
+				6DEB371C2714CA4C009B31D3 /* ProfileRequest.swift in Sources */,
 				6D0891F526AB835000F7366B /* SignUpViewRouter.swift in Sources */,
 				6DEB37182714AD5E009B31D3 /* ProfileInteractor.swift in Sources */,
 				6D0891B126A779DD00F7366B /* TaskManagerAppApp.swift in Sources */,
