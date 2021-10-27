@@ -9,13 +9,19 @@ import SwiftUI
 import Charts
 
 struct ChartView: View {
+    @ObservedObject var viewModel: ChartViewModel
+    
     var body: some View {
-        Text("Olá Gráficos")
+        BoxChartView(entries: $viewModel.entries, dates: $viewModel.dates)
+            .frame(maxWidth: .infinity, maxHeight: 350)
     }
 }
 
 struct ChartView_Previews: PreviewProvider {
     static var previews: some View {
-        ChartView()
+        ForEach(ColorScheme.allCases, id: \.self) {
+            ChartView(viewModel: ChartViewModel())
+                .preferredColorScheme($0)
+        }
     }
 }

@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -48,6 +48,8 @@
 		6D3A9EFC26B9E90F00AA37EE /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9EFB26B9E90F00AA37EE /* ButtonStyle.swift */; };
 		6D3A9F0126B9EE1900AA37EE /* HabitCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9F0026B9EE1900AA37EE /* HabitCardViewModel.swift */; };
 		6D3A9F0326B9EFF500AA37EE /* HabitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9F0226B9EFF400AA37EE /* HabitCardView.swift */; };
+		6D473A7F27286143007FCFB0 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D473A7E27286143007FCFB0 /* ChartViewModel.swift */; };
+		6D473A81272862E8007FCFB0 /* BoxChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D473A80272862E8007FCFB0 /* BoxChartView.swift */; };
 		6D4EA62926D9C1A000FF5A62 /* imageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4EA62826D9C1A000FF5A62 /* imageView.swift */; };
 		6D4EA62B26D9C22A00FF5A62 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4EA62A26D9C22A00FF5A62 /* ImageLoader.swift */; };
 		6D9621A226BB315400B61F1F /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9EED26B89B7400AA37EE /* HabitView.swift */; };
@@ -125,6 +127,8 @@
 		6D3A9EFB26B9E90F00AA37EE /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		6D3A9F0026B9EE1900AA37EE /* HabitCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardViewModel.swift; sourceTree = "<group>"; };
 		6D3A9F0226B9EFF400AA37EE /* HabitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardView.swift; sourceTree = "<group>"; };
+		6D473A7E27286143007FCFB0 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
+		6D473A80272862E8007FCFB0 /* BoxChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxChartView.swift; sourceTree = "<group>"; };
 		6D4EA62826D9C1A000FF5A62 /* imageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageView.swift; sourceTree = "<group>"; };
 		6D4EA62A26D9C22A00FF5A62 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		6D9621A326BB4BED00B61F1F /* HabitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitResponse.swift; sourceTree = "<group>"; };
@@ -668,6 +672,7 @@
 		6D988BAC272767610094245F /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				6D473A7E27286143007FCFB0 /* ChartViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -676,6 +681,7 @@
 			isa = PBXGroup;
 			children = (
 				6D988BAF2727692C0094245F /* ChartView.swift */,
+				6D473A80272862E8007FCFB0 /* BoxChartView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -773,7 +779,6 @@
 				B51E36E42EA6A128B4F06F69 /* Pods-TaskManagerApp.debug.xcconfig */,
 				6BF4ECEE3F72C4918DFFB363 /* Pods-TaskManagerApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -907,6 +912,8 @@
 				6DBB1AFB26B4BB8700722E22 /* SignInRemoteDataSource.swift in Sources */,
 				6D3A201126ACE78000385C28 /* LoadingButtonView.swift in Sources */,
 				6D27F2E326C07A62004A2A74 /* HabitDetailInteractor.swift in Sources */,
+				6D473A7F27286143007FCFB0 /* ChartViewModel.swift in Sources */,
+				6D473A81272862E8007FCFB0 /* BoxChartView.swift in Sources */,
 				6D0891E226AA272100F7366B /* HomeViewModel.swift in Sources */,
 				6DBB1B0826B81B6200722E22 /* LocalDataSource.swift in Sources */,
 				6DBB1AF626B4B29A00722E22 /* SignInErrorResponse.swift in Sources */,
