@@ -50,6 +50,7 @@
 		6D3A9F0326B9EFF500AA37EE /* HabitCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9F0226B9EFF400AA37EE /* HabitCardView.swift */; };
 		6D473A7F27286143007FCFB0 /* ChartViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D473A7E27286143007FCFB0 /* ChartViewModel.swift */; };
 		6D473A81272862E8007FCFB0 /* BoxChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D473A80272862E8007FCFB0 /* BoxChartView.swift */; };
+		6D473A842729C3D1007FCFB0 /* DateAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D473A832729C3D0007FCFB0 /* DateAxisValueFormatter.swift */; };
 		6D4EA62926D9C1A000FF5A62 /* imageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4EA62826D9C1A000FF5A62 /* imageView.swift */; };
 		6D4EA62B26D9C22A00FF5A62 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4EA62A26D9C22A00FF5A62 /* ImageLoader.swift */; };
 		6D9621A226BB315400B61F1F /* HabitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D3A9EED26B89B7400AA37EE /* HabitView.swift */; };
@@ -129,6 +130,7 @@
 		6D3A9F0226B9EFF400AA37EE /* HabitCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCardView.swift; sourceTree = "<group>"; };
 		6D473A7E27286143007FCFB0 /* ChartViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartViewModel.swift; sourceTree = "<group>"; };
 		6D473A80272862E8007FCFB0 /* BoxChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxChartView.swift; sourceTree = "<group>"; };
+		6D473A832729C3D0007FCFB0 /* DateAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAxisValueFormatter.swift; sourceTree = "<group>"; };
 		6D4EA62826D9C1A000FF5A62 /* imageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageView.swift; sourceTree = "<group>"; };
 		6D4EA62A26D9C22A00FF5A62 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		6D9621A326BB4BED00B61F1F /* HabitResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitResponse.swift; sourceTree = "<group>"; };
@@ -634,6 +636,14 @@
 			path = Modifier;
 			sourceTree = "<group>";
 		};
+		6D473A822729C3AE007FCFB0 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				6D473A832729C3D0007FCFB0 /* DateAxisValueFormatter.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
 		6D4EA62526D9C14A00FF5A62 /* Image */ = {
 			isa = PBXGroup;
 			children = (
@@ -662,6 +672,7 @@
 		6D988BAB272767570094245F /* Charts */ = {
 			isa = PBXGroup;
 			children = (
+				6D473A822729C3AE007FCFB0 /* Helper */,
 				6D988BAE272767750094245F /* Model */,
 				6D988BAD272767690094245F /* View */,
 				6D988BAC272767610094245F /* ViewModel */,
@@ -960,6 +971,7 @@
 				6D0891FE26ABA92B00F7366B /* EditTextView.swift in Sources */,
 				6D3A9F0126B9EE1900AA37EE /* HabitCardViewModel.swift in Sources */,
 				6D9621A426BB4BED00B61F1F /* HabitResponse.swift in Sources */,
+				6D473A842729C3D1007FCFB0 /* DateAxisValueFormatter.swift in Sources */,
 				6D26150826B20C83004F1FE0 /* SignUpRequest.swift in Sources */,
 				6D0891D326A8D53100F7366B /* SplashViewRouter.swift in Sources */,
 				6D26151026B366E5004F1FE0 /* SignInResponse.swift in Sources */,

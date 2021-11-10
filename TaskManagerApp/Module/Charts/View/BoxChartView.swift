@@ -21,6 +21,7 @@ struct BoxChartView: UIViewRepresentable {
         uiView.chartDescription?.enabled = false
         uiView.xAxis.granularity = 1
         uiView.xAxis.labelPosition = .bottom
+        uiView.xAxis.valueFormatter = DateAxisValueFormatter(dates: dates)
         uiView.rightAxis.enabled = false
         uiView.leftAxis.axisLineColor = .orange
         uiView.animate(yAxisDuration: 1.0)
