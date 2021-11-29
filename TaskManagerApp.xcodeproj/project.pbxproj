@@ -53,6 +53,9 @@
 		6D473A842729C3D1007FCFB0 /* DateAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D473A832729C3D0007FCFB0 /* DateAxisValueFormatter.swift */; };
 		6D4EA62926D9C1A000FF5A62 /* imageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4EA62826D9C1A000FF5A62 /* imageView.swift */; };
 		6D4EA62B26D9C22A00FF5A62 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4EA62A26D9C22A00FF5A62 /* ImageLoader.swift */; };
+		6D8CFEFF2755052A00C53851 /* HabitCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CFEFE2755052A00C53851 /* HabitCreateView.swift */; };
+		6D8CFF022755065E00C53851 /* HabitCreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CFF012755065E00C53851 /* HabitCreateViewModel.swift */; };
+		6D8CFF042755262B00C53851 /* HabitViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CFF032755262B00C53851 /* HabitViewRouter.swift */; };
 		6D934751273C83FF00E70296 /* HabitValueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D934750273C83FF00E70296 /* HabitValueResponse.swift */; };
 		6D934755273C851A00E70296 /* ChartRemoteDateSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D934754273C851A00E70296 /* ChartRemoteDateSource.swift */; };
 		6D934757273C873200E70296 /* ChartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D934756273C873200E70296 /* ChartInteractor.swift */; };
@@ -137,6 +140,9 @@
 		6D473A832729C3D0007FCFB0 /* DateAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAxisValueFormatter.swift; sourceTree = "<group>"; };
 		6D4EA62826D9C1A000FF5A62 /* imageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageView.swift; sourceTree = "<group>"; };
 		6D4EA62A26D9C22A00FF5A62 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		6D8CFEFE2755052A00C53851 /* HabitCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateView.swift; sourceTree = "<group>"; };
+		6D8CFF012755065E00C53851 /* HabitCreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateViewModel.swift; sourceTree = "<group>"; };
+		6D8CFF032755262B00C53851 /* HabitViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewRouter.swift; sourceTree = "<group>"; };
 		6D934750273C83FF00E70296 /* HabitValueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitValueResponse.swift; sourceTree = "<group>"; };
 		6D934754273C851A00E70296 /* ChartRemoteDateSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartRemoteDateSource.swift; sourceTree = "<group>"; };
 		6D934756273C873200E70296 /* ChartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartInteractor.swift; sourceTree = "<group>"; };
@@ -391,6 +397,7 @@
 		6D0891EB26AB7A3300F7366B /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				6D8CFEF92755048700C53851 /* HabitCreate */,
 				6D988BAB272767570094245F /* Charts */,
 				6D3198D726E11383008BEBA3 /* Profile */,
 				6D3A9EE926B89B3A00AA37EE /* Habit */,
@@ -502,6 +509,7 @@
 			isa = PBXGroup;
 			children = (
 				6D27F2DA26BDF41F004A2A74 /* HabitCardViewRouter.swift */,
+				6D8CFF032755262B00C53851 /* HabitViewRouter.swift */,
 			);
 			path = Router;
 			sourceTree = "<group>";
@@ -659,6 +667,39 @@
 				6D4EA62A26D9C22A00FF5A62 /* ImageLoader.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		6D8CFEF92755048700C53851 /* HabitCreate */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CFEFD2755050800C53851 /* Model */,
+				6D8CFEFB275504B000C53851 /* View */,
+				6D8CFEFA275504A100C53851 /* ViewModel */,
+			);
+			path = HabitCreate;
+			sourceTree = "<group>";
+		};
+		6D8CFEFA275504A100C53851 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CFF012755065E00C53851 /* HabitCreateViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		6D8CFEFB275504B000C53851 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CFEFE2755052A00C53851 /* HabitCreateView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		6D8CFEFD2755050800C53851 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		6D934752273C84DE00E70296 /* DataSource */ = {
@@ -947,6 +988,7 @@
 				6D27F2DB26BDF41F004A2A74 /* HabitCardViewRouter.swift in Sources */,
 				6DC25B6E26F36F08008A4093 /* ProfileConstants.swift in Sources */,
 				6D0891EA26AB679300F7366B /* SignUpViewModel.swift in Sources */,
+				6D8CFF022755065E00C53851 /* HabitCreateViewModel.swift in Sources */,
 				6DBB1B0226B5A7F800722E22 /* SignUpRemoteDataSource.swift in Sources */,
 				6D27F2D626BDE994004A2A74 /* HabitDetailViewModel.swift in Sources */,
 				6D27F2E126C07780004A2A74 /* HabitDetailDataSource.swift in Sources */,
@@ -989,6 +1031,7 @@
 				6D3198DF26E11401008BEBA3 /* ProfileView.swift in Sources */,
 				6D934755273C851A00E70296 /* ChartRemoteDateSource.swift in Sources */,
 				6DEB371A2714AE90009B31D3 /* ProfileUIState.swift in Sources */,
+				6D8CFF042755262B00C53851 /* HabitViewRouter.swift in Sources */,
 				6D26150C26B35B2D004F1FE0 /* ErrorResponse.swift in Sources */,
 				6D988BB02727692C0094245F /* ChartView.swift in Sources */,
 				6D3A9EF026B89C0900AA37EE /* HabitViewModel.swift in Sources */,
@@ -1001,6 +1044,7 @@
 				6D3A9EE826B89AB500AA37EE /* HomeViewRouter.swift in Sources */,
 				6D4EA62926D9C1A000FF5A62 /* imageView.swift in Sources */,
 				6D0891FE26ABA92B00F7366B /* EditTextView.swift in Sources */,
+				6D8CFEFF2755052A00C53851 /* HabitCreateView.swift in Sources */,
 				6D3A9F0126B9EE1900AA37EE /* HabitCardViewModel.swift in Sources */,
 				6D9621A426BB4BED00B61F1F /* HabitResponse.swift in Sources */,
 				6D473A842729C3D1007FCFB0 /* DateAxisValueFormatter.swift in Sources */,
