@@ -21,7 +21,7 @@ class DateAxisValueFormatter: IAxisValueFormatter {
         let createdAt: String
         
         dateFormatter.locale = Locale(identifier: "en_US_POSIX")
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
         if position < 0 && position > dates.count {
             return ""
         }
