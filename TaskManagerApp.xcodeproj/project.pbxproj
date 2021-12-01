@@ -56,6 +56,8 @@
 		6D8CFEFF2755052A00C53851 /* HabitCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CFEFE2755052A00C53851 /* HabitCreateView.swift */; };
 		6D8CFF022755065E00C53851 /* HabitCreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CFF012755065E00C53851 /* HabitCreateViewModel.swift */; };
 		6D8CFF042755262B00C53851 /* HabitViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CFF032755262B00C53851 /* HabitViewRouter.swift */; };
+		6D8CFF0727552B9900C53851 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CFF0627552B9900C53851 /* ImagePickerView.swift */; };
+		6D8CFF0927552D1800C53851 /* ImagePickerViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CFF0827552D1800C53851 /* ImagePickerViewCoordinator.swift */; };
 		6D934751273C83FF00E70296 /* HabitValueResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D934750273C83FF00E70296 /* HabitValueResponse.swift */; };
 		6D934755273C851A00E70296 /* ChartRemoteDateSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D934754273C851A00E70296 /* ChartRemoteDateSource.swift */; };
 		6D934757273C873200E70296 /* ChartInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D934756273C873200E70296 /* ChartInteractor.swift */; };
@@ -143,6 +145,8 @@
 		6D8CFEFE2755052A00C53851 /* HabitCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateView.swift; sourceTree = "<group>"; };
 		6D8CFF012755065E00C53851 /* HabitCreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateViewModel.swift; sourceTree = "<group>"; };
 		6D8CFF032755262B00C53851 /* HabitViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewRouter.swift; sourceTree = "<group>"; };
+		6D8CFF0627552B9900C53851 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		6D8CFF0827552D1800C53851 /* ImagePickerViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerViewCoordinator.swift; sourceTree = "<group>"; };
 		6D934750273C83FF00E70296 /* HabitValueResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitValueResponse.swift; sourceTree = "<group>"; };
 		6D934754273C851A00E70296 /* ChartRemoteDateSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartRemoteDateSource.swift; sourceTree = "<group>"; };
 		6D934756273C873200E70296 /* ChartInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartInteractor.swift; sourceTree = "<group>"; };
@@ -443,6 +447,7 @@
 		6D0891FB26ABA90100F7366B /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				6D8CFF0527552B5400C53851 /* ImagePicker */,
 				6D4EA62526D9C14A00FF5A62 /* Image */,
 				6D3A9EF926B9E85400AA37EE /* Modifier */,
 				6D3A200D26ACE72200385C28 /* Button */,
@@ -700,6 +705,15 @@
 			children = (
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		6D8CFF0527552B5400C53851 /* ImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				6D8CFF0627552B9900C53851 /* ImagePickerView.swift */,
+				6D8CFF0827552D1800C53851 /* ImagePickerViewCoordinator.swift */,
+			);
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
 		6D934752273C84DE00E70296 /* DataSource */ = {
@@ -997,6 +1011,7 @@
 				6D27F2E326C07A62004A2A74 /* HabitDetailInteractor.swift in Sources */,
 				6D934751273C83FF00E70296 /* HabitValueResponse.swift in Sources */,
 				6D473A7F27286143007FCFB0 /* ChartViewModel.swift in Sources */,
+				6D8CFF0727552B9900C53851 /* ImagePickerView.swift in Sources */,
 				6D473A81272862E8007FCFB0 /* BoxChartView.swift in Sources */,
 				6D0891E226AA272100F7366B /* HomeViewModel.swift in Sources */,
 				6DBB1B0826B81B6200722E22 /* LocalDataSource.swift in Sources */,
@@ -1043,6 +1058,7 @@
 				6D4EA62B26D9C22A00FF5A62 /* ImageLoader.swift in Sources */,
 				6D3A9EE826B89AB500AA37EE /* HomeViewRouter.swift in Sources */,
 				6D4EA62926D9C1A000FF5A62 /* imageView.swift in Sources */,
+				6D8CFF0927552D1800C53851 /* ImagePickerViewCoordinator.swift in Sources */,
 				6D0891FE26ABA92B00F7366B /* EditTextView.swift in Sources */,
 				6D8CFEFF2755052A00C53851 /* HabitCreateView.swift in Sources */,
 				6D3A9F0126B9EE1900AA37EE /* HabitCardViewModel.swift in Sources */,
