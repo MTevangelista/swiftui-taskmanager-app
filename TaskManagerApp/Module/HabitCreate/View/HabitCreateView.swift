@@ -99,7 +99,7 @@ struct HabitCreateView: View {
 struct HabitCreateView_Previews: PreviewProvider {
     static var previews: some View {
         ForEach(ColorScheme.allCases, id: \.self) {
-            HabitCreateView(viewModel: HabitCreateViewModel(interactor: HabitDetailInteractor()))
+            HabitCreateView(viewModel: HabitCreateViewModel(interactor: HabitCreateInteractor()))
                 .preferredColorScheme($0)
         }
     }

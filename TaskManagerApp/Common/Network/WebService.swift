@@ -111,14 +111,14 @@ extension WebService {
                     
                     if let httpResponse = response as? HTTPURLResponse {
                         switch httpResponse.statusCode {
+                        case 200, 201:
+                            completion(.success(data))
+                            break
                         case 400:
                             completion(.failure(.badRequest, data))
                             break
                         case 401:
                             completion(.failure(.unauthorized, data))
-                        case 200:
-                            completion(.success(data))
-                            break
                         default:
                             break
                         }

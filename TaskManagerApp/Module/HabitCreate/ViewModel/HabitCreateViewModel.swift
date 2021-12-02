@@ -9,7 +9,7 @@ import Combine
 import SwiftUI
 
 class HabitCreateViewModel: ObservableObject {
-    @Published var uiState: HabitDetailUIState = .none
+    @Published var uiState: HabitCreateUIState = .none
     @Published var name = ""
     @Published var label = ""
     @Published var image: Image? = Image(systemName: "camera.fill")
@@ -19,9 +19,9 @@ class HabitCreateViewModel: ObservableObject {
     var cancellables = Set<AnyCancellable>()
     var habitPublisher: PassthroughSubject<Bool, Never>?
 
-    let interactor: HabitDetailInteractor
+    let interactor: HabitCreateInteractor
     
-    init(interactor: HabitDetailInteractor) {
+    init(interactor: HabitCreateInteractor) {
         self.interactor = interactor
     }
     
@@ -34,5 +34,21 @@ class HabitCreateViewModel: ObservableObject {
     
     func save() {
         self.uiState = .loading
+        
+        cancellable = interactor.saveHabit(request: HabitCreateRequest(imageData: imageData,
+                                                                       name: name,
+                                                                       label: label))
+            .receive(on: DispatchQueue.main)
+            .sink(receiveCompletion: { completion in
+                switch completion {
+                case .failure(let appError):
+                    self.uiState = .error(appError.message)
+                    break
+                case .finished: break
+                }
+            }, receiveValue: {
+                self.uiState = .success
+                self.habitPublisher?.send(true)
+            })
     }
 }
