@@ -72,6 +72,7 @@
 		6D9621AA26BB50DB00B61F1F /* HabitInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9621A926BB50DB00B61F1F /* HabitInteractor.swift */; };
 		6D9621B426BC950C00B61F1F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9621B326BC950C00B61F1F /* Date+Extension.swift */; };
 		6D988BB02727692C0094245F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D988BAF2727692C0094245F /* ChartView.swift */; };
+		6DAC28E027594E7B00B780C1 /* NSMutableData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAC28DF27594E7B00B780C1 /* NSMutableData+Extension.swift */; };
 		6DBB1AF626B4B29A00722E22 /* SignInErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AF526B4B29900722E22 /* SignInErrorResponse.swift */; };
 		6DBB1AF926B4B89100722E22 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AF826B4B89100722E22 /* SignInInteractor.swift */; };
 		6DBB1AFB26B4BB8700722E22 /* SignInRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AFA26B4BB8700722E22 /* SignInRemoteDataSource.swift */; };
@@ -164,6 +165,7 @@
 		6D9621A926BB50DB00B61F1F /* HabitInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitInteractor.swift; sourceTree = "<group>"; };
 		6D9621B326BC950C00B61F1F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		6D988BAF2727692C0094245F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		6DAC28DF27594E7B00B780C1 /* NSMutableData+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableData+Extension.swift"; sourceTree = "<group>"; };
 		6DBB1AF526B4B29900722E22 /* SignInErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInErrorResponse.swift; sourceTree = "<group>"; };
 		6DBB1AF826B4B89100722E22 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		6DBB1AFA26B4BB8700722E22 /* SignInRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRemoteDataSource.swift; sourceTree = "<group>"; };
@@ -588,6 +590,7 @@
 			children = (
 				6D3A200B26ACE19500385C28 /* String+Extension.swift */,
 				6D9621B326BC950C00B61F1F /* Date+Extension.swift */,
+				6DAC28DF27594E7B00B780C1 /* NSMutableData+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -1086,6 +1089,7 @@
 				6DBB1B0026B5A62500722E22 /* SignUpInteractor.swift in Sources */,
 				6D08920226ABA9C400F7366B /* CustomTextFieldStyle.swift in Sources */,
 				6D4EA62B26D9C22A00FF5A62 /* ImageLoader.swift in Sources */,
+				6DAC28E027594E7B00B780C1 /* NSMutableData+Extension.swift in Sources */,
 				6D3A9EE826B89AB500AA37EE /* HomeViewRouter.swift in Sources */,
 				6D940E722758407400AA1EA6 /* HabitCreateInteractor.swift in Sources */,
 				6D4EA62926D9C1A000FF5A62 /* imageView.swift in Sources */,

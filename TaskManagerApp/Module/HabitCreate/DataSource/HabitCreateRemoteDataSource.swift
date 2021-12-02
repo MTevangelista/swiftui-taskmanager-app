@@ -17,10 +17,12 @@ struct HabitCreateRemoteDataSource {
     
     func saveHabit(request: HabitCreateRequest) -> Future<Void, AppError> {
         return Future { promise in
-            WebService.call(path: .habits, params: [
-                URLQueryItem(name: "name", value: request.name),
-                URLQueryItem(name: "label", value: request.label)
-            ]) { result in
+            WebService.call(path: .habits,
+                            params: [
+                                URLQueryItem(name: "name", value: request.name),
+                                URLQueryItem(name: "label", value: request.label)
+                            ],
+                            data: request.imageData) { result in
                 switch result {
                 case .failure(let error, let data):
                     if error == .unauthorized {
