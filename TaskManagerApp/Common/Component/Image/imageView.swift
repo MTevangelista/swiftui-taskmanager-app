@@ -18,7 +18,7 @@ struct imageView: View {
     }
     
     var body: some View {
-        Image(uiImage: image)
+        Image(uiImage: UIImage(data: imageLoader.data) ?? image)
             .resizable()
             .onReceive(imageLoader.didChange, perform: { data in
                 self.image = UIImage(data: data) ?? UIImage()

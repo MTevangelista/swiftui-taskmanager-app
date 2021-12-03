@@ -21,8 +21,14 @@ class ImagePickerViewCoordinator: NSObject, UINavigationControllerDelegate, UIIm
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         if let uiImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
-            image = Image(uiImage: uiImage)
-            imageData = uiImage.jpegData(compressionQuality: 0.5)
+            let width: CGFloat = 420.0
+            let canvas = CGSize(width: width, height: CGFloat(ceil(width / uiImage.size.width * uiImage.size.height)))
+            let imgResized = UIGraphicsImageRenderer(size: canvas, format: uiImage.imageRendererFormat).image { _ in
+                uiImage.draw(in: CGRect(origin: .zero, size: canvas))
+            }
+            
+            image = Image(uiImage: imgResized)
+            imageData = imgResized.jpegData(compressionQuality: 0.5)
         }
         self.isPresented = false
     }
