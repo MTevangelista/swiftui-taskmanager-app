@@ -73,6 +73,7 @@
 		6D9621B426BC950C00B61F1F /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D9621B326BC950C00B61F1F /* Date+Extension.swift */; };
 		6D988BB02727692C0094245F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D988BAF2727692C0094245F /* ChartView.swift */; };
 		6DAC28E027594E7B00B780C1 /* NSMutableData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAC28DF27594E7B00B780C1 /* NSMutableData+Extension.swift */; };
+		6DAC28E3275A87A200B780C1 /* Mask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DAC28E2275A87A200B780C1 /* Mask.swift */; };
 		6DBB1AF626B4B29A00722E22 /* SignInErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AF526B4B29900722E22 /* SignInErrorResponse.swift */; };
 		6DBB1AF926B4B89100722E22 /* SignInInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AF826B4B89100722E22 /* SignInInteractor.swift */; };
 		6DBB1AFB26B4BB8700722E22 /* SignInRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBB1AFA26B4BB8700722E22 /* SignInRemoteDataSource.swift */; };
@@ -166,6 +167,7 @@
 		6D9621B326BC950C00B61F1F /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		6D988BAF2727692C0094245F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
 		6DAC28DF27594E7B00B780C1 /* NSMutableData+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMutableData+Extension.swift"; sourceTree = "<group>"; };
+		6DAC28E2275A87A200B780C1 /* Mask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mask.swift; sourceTree = "<group>"; };
 		6DBB1AF526B4B29900722E22 /* SignInErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInErrorResponse.swift; sourceTree = "<group>"; };
 		6DBB1AF826B4B89100722E22 /* SignInInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInInteractor.swift; sourceTree = "<group>"; };
 		6DBB1AFA26B4BB8700722E22 /* SignInRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInRemoteDataSource.swift; sourceTree = "<group>"; };
@@ -427,6 +429,7 @@
 		6D0891EC26AB7A8300F7366B /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6DAC28E1275A878D00B780C1 /* Util */,
 				6D3A201226AF9EC900385C28 /* Network */,
 				6D3A200A26ACE15600385C28 /* Extension */,
 				6D0891FB26ABA90100F7366B /* Component */,
@@ -818,6 +821,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		6DAC28E1275A878D00B780C1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				6DAC28E2275A87A200B780C1 /* Mask.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		6DBB1AF726B4B86600722E22 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -1024,6 +1035,7 @@
 				6D3A9EF226B89D5400AA37EE /* HabitUIState.swift in Sources */,
 				6D0891C526A77BB300F7366B /* SplashUIState.swift in Sources */,
 				6DBB1AFD26B596E500722E22 /* AppError.swift in Sources */,
+				6DAC28E3275A87A200B780C1 /* Mask.swift in Sources */,
 				6D934757273C873200E70296 /* ChartInteractor.swift in Sources */,
 				6DBB1B1026B85A4000722E22 /* SplashRemoteDataSource.swift in Sources */,
 				6D934759273C880900E70296 /* ChartUIState.swift in Sources */,

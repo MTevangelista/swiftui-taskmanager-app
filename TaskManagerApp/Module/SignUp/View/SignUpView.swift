@@ -89,9 +89,10 @@ extension SignUpView {
     var documentField: some View {
         EditTextView(text: $viewModel.document,
                      placeholder: "Entre com seu CPF *",
+                     mask: "###.###.###-##",
                      keyboard: .numberPad,
                      error: "CPF inválido",
-                     failure: viewModel.document.count != 11)
+                     failure: viewModel.document.count != 14)
         // TODO: mask
         // TODO: isDisabled
     }
@@ -101,10 +102,11 @@ extension SignUpView {
     var phoneField: some View {
         EditTextView(text: $viewModel.phone,
                      placeholder: "Entre com seu celular *",
+                     mask: "(##) ####-####",
                      keyboard: .numberPad,
                      error: "Entre com o DDD + 8 OU 9 digitos",
-                     failure: viewModel.phone.hasMinLenght(value: viewModel.phone, min: 3) ||
-                        viewModel.phone.hasMaxLenght(value: viewModel.phone, max: 12))
+                     failure: viewModel.phone.hasMinLenght(value: viewModel.phone, min: 14) ||
+                        viewModel.phone.hasMaxLenght(value: viewModel.phone, max: 15))
         // TODO: mask
     }
 }
@@ -113,7 +115,8 @@ extension SignUpView {
     var birthdayField: some View {
         EditTextView(text: $viewModel.birthday,
                      placeholder: "Entre com sua data de nascimento *",
-                     keyboard: .default,
+                     mask: "##/##/####",
+                     keyboard: .numberPad,
                      error: "Data deve ser dd/MM/yyyy",
                      failure: viewModel.birthday.count != 10)
         // TODO: mask
@@ -143,9 +146,9 @@ extension SignUpView {
         disabled: !viewModel.email.isEmail() ||
             viewModel.password.hasMinLenght(value: viewModel.password, min: 8) ||
             viewModel.fullName.hasMinLenght(value: viewModel.fullName, min: 3) ||
-            viewModel.document.count != 11                           ||
-            viewModel.phone.hasMinLenght(value: viewModel.phone, min: 10)      ||
-            viewModel.phone.hasMaxLenght(value: viewModel.phone, max: 12)      ||
+            viewModel.document.count != 14                           ||
+            viewModel.phone.hasMinLenght(value: viewModel.phone, min: 14)      ||
+            viewModel.phone.hasMaxLenght(value: viewModel.phone, max: 15)      ||
             viewModel.birthday.count != 10)
     }
 }

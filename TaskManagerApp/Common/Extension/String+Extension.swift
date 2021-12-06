@@ -8,6 +8,18 @@
 import Foundation
 
 extension String {
+    func characterAtIndex(index: Int) -> Character? {
+        var current = 0
+        
+        for char in self {
+            if current == index {
+                return char
+            }
+            current = current + 1
+        }
+        return nil
+    }
+    
     func isEmail() -> Bool {
         let regEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         
