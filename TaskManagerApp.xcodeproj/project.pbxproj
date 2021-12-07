@@ -53,6 +53,7 @@
 		6D473A842729C3D1007FCFB0 /* DateAxisValueFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D473A832729C3D0007FCFB0 /* DateAxisValueFormatter.swift */; };
 		6D4EA62926D9C1A000FF5A62 /* imageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4EA62826D9C1A000FF5A62 /* imageView.swift */; };
 		6D4EA62B26D9C22A00FF5A62 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4EA62A26D9C22A00FF5A62 /* ImageLoader.swift */; };
+		6D69787A276020EE0046DDE9 /* ProfileEditTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D697879276020EE0046DDE9 /* ProfileEditTextView.swift */; };
 		6D8CFEFF2755052A00C53851 /* HabitCreateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CFEFE2755052A00C53851 /* HabitCreateView.swift */; };
 		6D8CFF022755065E00C53851 /* HabitCreateViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CFF012755065E00C53851 /* HabitCreateViewModel.swift */; };
 		6D8CFF042755262B00C53851 /* HabitViewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8CFF032755262B00C53851 /* HabitViewRouter.swift */; };
@@ -148,6 +149,7 @@
 		6D473A832729C3D0007FCFB0 /* DateAxisValueFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateAxisValueFormatter.swift; sourceTree = "<group>"; };
 		6D4EA62826D9C1A000FF5A62 /* imageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imageView.swift; sourceTree = "<group>"; };
 		6D4EA62A26D9C22A00FF5A62 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		6D697879276020EE0046DDE9 /* ProfileEditTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileEditTextView.swift; sourceTree = "<group>"; };
 		6D8CFEFE2755052A00C53851 /* HabitCreateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateView.swift; sourceTree = "<group>"; };
 		6D8CFF012755065E00C53851 /* HabitCreateViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCreateViewModel.swift; sourceTree = "<group>"; };
 		6D8CFF032755262B00C53851 /* HabitViewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewRouter.swift; sourceTree = "<group>"; };
@@ -881,6 +883,7 @@
 			isa = PBXGroup;
 			children = (
 				6DC25B6D26F36F08008A4093 /* ProfileConstants.swift */,
+				6D697879276020EE0046DDE9 /* ProfileEditTextView.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -1060,6 +1063,7 @@
 				6DBB1B0826B81B6200722E22 /* LocalDataSource.swift in Sources */,
 				6DBB1AF626B4B29A00722E22 /* SignInErrorResponse.swift in Sources */,
 				6DEB370E2710ABE7009B31D3 /* ProfileViewModel.swift in Sources */,
+				6D69787A276020EE0046DDE9 /* ProfileEditTextView.swift in Sources */,
 				6DBB1B0626B8186800722E22 /* UserAuth.swift in Sources */,
 				6DECBB52270FAA5D00EBFCC6 /* GenderSelectorView.swift in Sources */,
 				6D27F2D426BDE97A004A2A74 /* HabitDetailView.swift in Sources */,

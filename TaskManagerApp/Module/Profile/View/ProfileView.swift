@@ -47,7 +47,8 @@ struct ProfileView: View {
                                 presentField(withTitle: ProfileConstants.Field.phone.title,
                                              textFieldPlaceholder: ProfileConstants.Field.phone.placeholder,
                                              textFieldText: $viewModel.phoneValidation.value,
-                                             keyboardType: .numberPad)
+                                             keyboardType: .numberPad,
+                                             mask: ProfileConstants.Field.phone.mask)
                                 
                                 if viewModel.phoneValidation.failure {
                                     Text(ProfileConstants.ErrorMessage.invalidPhone)
@@ -56,7 +57,8 @@ struct ProfileView: View {
                                 
                                 presentField(withTitle: ProfileConstants.Field.birthday.title,
                                              textFieldPlaceholder: ProfileConstants.Field.birthday.placeholder,
-                                             textFieldText: $viewModel.birthdayValidation.value)
+                                             textFieldText: $viewModel.birthdayValidation.value,
+                                             mask: ProfileConstants.Field.birthday.mask)
                                 
                                 if viewModel.birthdayValidation.failure {
                                     Text(ProfileConstants.ErrorMessage.invalidDate)
@@ -128,15 +130,15 @@ extension ProfileView {
                       textFieldPlaceholder placeholder: String = "",
                       textFieldText text: Binding<String>,
                       keyboardType: UIKeyboardType = .default,
-                      isDisabled: Bool = false) -> some View {
+                      isDisabled: Bool = false,
+                      mask: String? = nil) -> some View {
         HStack {
             Text(title)
             Spacer()
-            TextField(placeholder, text: text)
-                .disabled(isDisabled)
-                .foregroundColor(isDisabled ? .gray : Color(ProfileConstants.Color.whiteAndBlack))
-                .keyboardType(keyboardType)
-                .multilineTextAlignment(.trailing)
+            ProfileEditTextView(text: text,
+                                placeholder: placeholder,
+                                mask: mask,
+                                keyboard: keyboardType)
         }
     }
 }

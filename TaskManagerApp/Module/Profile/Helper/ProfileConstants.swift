@@ -28,8 +28,8 @@ public enum ProfileConstants {
         public static let name = (title: "Nome", placeholder: "Digite o nome")
         public static let email = "E-mail"
         public static let cpf = "CPF"
-        public static let phone = (title: "Celular", placeholder: "Digite seu celular")
-        public static let birthday = (title: "Aniversário", placeholder: "Digite sua data de nascimento")
+        public static let phone = (title: "Celular", placeholder: "Digite seu celular", mask: "(##) ####-####")
+        public static let birthday = (title: "Aniversário", placeholder: "Digite sua data de nascimento", mask: "##/##/####")
     }
     
     public enum ErrorMessage {
